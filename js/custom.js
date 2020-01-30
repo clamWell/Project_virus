@@ -86,32 +86,22 @@ $(function() {
 		maxZoom: 5,
 	});
 
-
 	map.addLayer(mapTile);
 	//map.dragging.disable();
 	map.scrollWheelZoom.disable();
 	//map.fitWorld();
 
-	var geoData = acc_geoCode;
-	var nullCount = 0;
-	var makePlots = function() {
-		var plots = L.layerGroup().addTo(map);
-		for (var i = 0; i < geoData.length; i++) {
-			if (geoData[i].lat != "" && geoData[i].lon != "") {
-					var circles = new L.circle([geoData[i].lat, geoData[i].lon], {
-					color: '#fa9461',
-					weight: 1,
-					fillColor: '#fddcaf',
-					fillOpacity: 0.3,
-					radius: 2000,
-				});
-				plots.addLayer(circles);
-			} else if (geoData[i].lat == "" || geoData[i].lon == "") {
-				nullCount++;
-			}
-		}
-	};	
-	//	makePlots();
+	var info = L.control();
+	info.onAdd = function (map) {
+		this._div = L.DomUtil.create("div", "map-info"); 
+		this.update();
+		return this._div;
+	};
+	info.update = function (props) {
+		this._div.innerHTML = '<h3>각 전염병별 확산지역</h3>'
+	};
+	info.addTo(map);
+
 
 	var totalCases;
 	var totalDeath;
@@ -130,44 +120,69 @@ $(function() {
 		var circleColor = (type == "cases")? "#ff8a00" : "#d10000";
 		
 		for (var i=0; i<data.length; i++) {
-			totalCases += data[i].cases;
-			totalDeath += data[i].death;
-			var radius = Math.sqrt( data[i][type] ) * 20000 ;
-			console.log(radius, data[i].lat, data[i].lot);
-			var circles = new L.circle([data[i].lat, data[i].lot],{
-				color: circleColor,
-				fillColor: circleColor,
-				fillOpacity: 0.5,
-				border: 1,
-				className: 'circle circle-'+data[i].nation,
-				idName:i,	
-				weight:2,	
-				radius: radius
-			})
-			circlePos.addLayer(circles);												
+			if( data[i][type] !== 0 ){
+				totalCases += data[i].cases;
+				totalDeath += data[i].death;
+				var radius = Math.sqrt( data[i][type] ) * 30000 ;
+				//console.log(radius, data[i].lat, data[i].lot);
+				var circles = new L.circle([data[i].lat, data[i].lot],{
+					color: circleColor,
+					fillColor: circleColor,
+					fillOpacity: 0.2,
+					border: 1,
+					className: 'circle circle-'+data[i].nation,
+					idName:i,	
+					weight:2,	
+					radius: radius
+				}).bindPopup('<p class="nation-info">'+data[i].nation+'</p><p class="numb">'+ data[i][type] +'명</p>');
+				circlePos.addLayer(circles);																		
+			}
+			
 		}	
 		
 		$(".caseNumber").html(totalCases);
 		$(".deathNumber").html(totalDeath);
 	}
-
-
 	function setMapDefault(){
-		makeCirlces("sars", "cases");
+		mapVirus = "sars";
+		mapDataType ="cases"; 
+		makeCirlces(mapVirus, mapDataType);
 	}
 	setMapDefault();
+	
+	function removeMapCircles(){
+		$(".circle").fadeOut();
+	}
 
-	$(".virus-type-change ul li").on("click", function(e){
+	function circlesOn(e) {
+		var layer = e.target;
+		layer.setStyle({
+			fillOpacity: 1
+		});
+		this.openPopup();
+		info.update(layer.features.properties);
+	}
+
+	$(".virus-type-change ul li").on("click", function(e){				
 		$(".virus-type-change ul li").removeClass("on");
 		$(this).addClass("on");
 		$(".switch-btn-holder .each-btn").removeClass("on");
-		$(".type-case").addClass("on");
-
+		$(".type-case").addClass("on");		
 		mapVirus = $(this).attr("data-virus");
 		mapDataType = "cases";
+
+		removeMapCircles();
 		makeCirlces(mapVirus, mapDataType);
 	});
 
+	$(".switch-btn-holder .each-btn").on("click", function(e){	
+		$(".switch-btn-holder .each-btn").removeClass("on");
+		$(this).addClass("on");
+		mapDataType = $(this).attr("data-type");		
+
+		removeMapCircles();
+		makeCirlces(mapVirus, mapDataType);
+	});
 	// (End) Plots map using leaflet.js
 
 

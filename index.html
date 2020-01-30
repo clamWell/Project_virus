@@ -2,7 +2,6 @@
 	include_once('/data/news/kh_storytelling/_common_header.php');
 	$css = "css/style.css?" . filemtime("css/style.css");
 	$js = "js/custom.js?" . filemtime("js/custom.js");
-	$accGeoCode = "js/accGeocode.js?" . filemtime("js/accGeocode.js");
 	$caseData = "js/caseData.js?" . filemtime("js/caseData.js");
 ?>
 
@@ -215,9 +214,9 @@
 								</div>
 								<div class="data-type-change">
 									<div class="switch-btn-holder">
-										<div class="each-btn on type-case">확진자 <span class="caseNumber">100명</span></div>
+										<div class="each-btn on type-case" data-type="cases">확진자 <span class="caseNumber">100명</span></div>
 										<div class="switch-icon"><img src="http://img.khan.co.kr/spko/storytelling/2020/minor/change.png" alt=""></div>
-										<div class="each-btn type-death">사망자 <span class="deathNumber">100명</span></div>
+										<div class="each-btn type-death" data-type="death">사망자 <span class="deathNumber">100명</span></div>
 									</div>
 								</div>
 							</div>
@@ -398,7 +397,6 @@
     </div>
     <!-- //전체 wrap (E)-->
 	<script type="text/javascript" src="<?php echo $js; ?>"></script>
-	<script type="text/javascript" src="<?php echo $accGeoCode; ?>"></script>
 	<script type="text/javascript" src="<?php echo $caseData; ?>"></script>
 
 	<!-- imp 2019.04 YJ 추가-->

@@ -247,7 +247,8 @@ letter-spacing: 0; text-shadow: 0px 0px 2px #111;}
 
 .world-map-area { width:100%; padding: 100px 0; }  
 .world-map-area .map-plots-graph { width: 100%; position: relative; }  
-.world-map-area .map-plots-graph .map-holder { height: 700px; width:100%; } 
+.world-map-area .map-plots-graph .map-holder { height: 700px; width:100%; 
+box-sizing: border-box; border-top: 5px solid #9f0000; border-bottom: 5px solid #9f0000;} 
 .world-map-area .map-plots-graph .map-holder #map { background:#111; background: #fff; width: 100%; height: 100%; } 
 .virus-type-change { margin: 30px auto; }
 .virus-type-change ul { text-align: center; }
@@ -267,9 +268,15 @@ border: 1px solid rgba(255,255,255,0); margin: 0px 3px; cursor: pointer; font-fa
 .switch-btn-holder .switch-icon {display: inline; display: inline; margin: 0px 10px; vertical-align: middle;}
 .switch-btn-holder .switch-icon img { width: 20px;vertical-align: middle;}
 .switch-btn-holder::after {clear: both; content: ""; display:block; }
-.switch-btn-holder .type-death { color: #d20000;font-weight:bold; }
+.switch-btn-holder .type-death { color: #ff2d2d;font-weight:bold; }
 .switch-btn-holder .each-btn > span { position:absolute; top: -50px; font-size:40px; line-height:1; 
 font-weight:bold; color:#fff;  text-shadow: 1px 1px 1px rgba(0,0,0,0.8);   width: 100px; left: 0;}
+
+.map-info {padding: 5px 10px; background: rgba(255,255,255,0.4); box-shadow: 0 0 3px rgba(0,0,0,0.2); border-radius: 5px;}
+.map-info h3  {color: #333; font-size: 15px; font-family: 'Noto Sans KR', 'notokr-regular'; }
+.leaflet-popup-content { text-align: center;font-weight: bold; color: #626262; letter-spacing: -1px; }
+.leaflet-popup-content p.nation-info {  margin: 0px; font-size: 14px;}
+.leaflet-popup-content p.numb { margin: 0px; font-size: 16px; color: #ff2d2d; }
 
 .personCard { margin: 130px auto; width:100%; }
 .personCard .card-des { max-width: 500px;margin: 0 auto; /* background: rgba(255,255,255,0.1);border-radius: 8px; */}
