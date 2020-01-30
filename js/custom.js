@@ -12,10 +12,10 @@ $(function() {
 		return Math.floor((Math.random() * (n2 - n1 + 1)) + n1);
 	};
 
-	//randomly Srpeading Virus
+	//randomly Spreading Virus
     var $virus= $(".back-virus");
 	for (var i = 0; i < $virus.length; i++) {
-		var yRange = screenHeight;
+		var yRange = screenHeight*6;
 		var x = randomRange(0, screenWidth) + "px";
 		var y = randomRange(0, yRange) + "px";
 		$virus.eq(i).css({"left": x});
@@ -79,18 +79,24 @@ $(function() {
 	// (Start) Plots map using leaflet.js
 	var mapZoom = (isMobile == true) ? [6, 6, 8] : [7, 7, 8];
 	var map = L.map("map").setView([30.782613, 114.366952], 3);
-	//map.setMaxBounds(bounds);
+	/*
 	var mapTile = new L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 		minZoom: 3,
 		maxZoom: 5,
+	});*/
+
+	var mapTile = new L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+		minZoom: 3,
+		maxZoom: 5,
 	});
 
+
+
 	map.addLayer(mapTile);
-	//map.dragging.disable();
 	map.scrollWheelZoom.disable();
 	//map.fitWorld();
-
 	var info = L.control();
 	info.onAdd = function (map) {
 		this._div = L.DomUtil.create("div", "map-info"); 
@@ -107,25 +113,24 @@ $(function() {
 	var totalDeath;
 	var mapVirus; 
 	var mapDataType; 
-
+	var totalCasesNumber = { "sars": [8042,830],"flu":[6717097, 19654],"mers":[1364, 519],"corona":[7711, 170]};
 	var circlePos = L.layerGroup().addTo(map);		
 	function makeCirlces(virus, type){
 		var virus = virus;		
 		var data = caseData.filter( function(v,i,a){
 			return a[i].virus == virus;
 		})
-		var totalCases = 0;
-		var totalDeath = 0;
+		var totalCases = totalCasesNumber[virus][0];
+		var totalDeath = totalCasesNumber[virus][1];
+
 		var type = (type == "cases")? "cases" : "death";
 		var circleColor = (type == "cases")? "#ff8a00" : "#d10000";
 		
 		for (var i=0; i<data.length; i++) {
-			if( data[i][type] !== 0 ){
-				totalCases += data[i].cases;
-				totalDeath += data[i].death;
+			if( data[i][type] !== 0 ){				
 				var radius = Math.sqrt( data[i][type] ) * 30000 ;
 				//console.log(radius, data[i].lat, data[i].lot);
-				var circles = new L.circle([data[i].lat, data[i].lot],{
+				var circles = new L.circle([data[i].Latitude, data[i].Longitude],{
 					color: circleColor,
 					fillColor: circleColor,
 					fillOpacity: 0.2,
@@ -140,8 +145,8 @@ $(function() {
 			
 		}	
 		
-		$(".caseNumber").html(totalCases);
-		$(".deathNumber").html(totalDeath);
+		$(".caseNumber").html(totalCases+"명");
+		$(".deathNumber").html(totalDeath+"명");
 	}
 	function setMapDefault(){
 		mapVirus = "sars";
@@ -173,6 +178,7 @@ $(function() {
 
 		removeMapCircles();
 		makeCirlces(mapVirus, mapDataType);
+		map.closePopup();
 	});
 
 	$(".switch-btn-holder .each-btn").on("click", function(e){	
@@ -182,8 +188,33 @@ $(function() {
 
 		removeMapCircles();
 		makeCirlces(mapVirus, mapDataType);
+		map.closePopup();
 	});
 	// (End) Plots map using leaflet.js
+
+	function showCardContents(){
+		$(".slider-bottom").slideDown( function(){
+			var cardConPos = $(".card-con-header").offset().top-150;
+			$("html, body").animate({scrollTop: cardConPos},1200, "easeOutCubic");
+		});		
+	};	
+	$(".slider-body ul li").on("click", function(e){
+		$(".slider-body ul li").removeClass("on");
+		$(this).addClass("on");
+		showCardContents();
+	});
+
+	function hideCardContents(){
+		var cardSliderPos = $(".slider").offset().top-(screenHeight*0.3);
+		$("html, body").animate({scrollTop: cardSliderPos},1000, "easeOutCubic",function(){
+			$(".slider-bottom").hide();
+		});
+		$(".slider-body ul li").removeClass("on");
+	};
+	
+	$(".see-more-btn").on("click", function(e){
+		hideCardContents();
+	});
 
 
 
