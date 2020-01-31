@@ -3,6 +3,7 @@
 	$css = "css/style.css?" . filemtime("css/style.css");
 	$js = "js/custom.js?" . filemtime("js/custom.js");
 	$caseData = "js/caseData.js?" . filemtime("js/caseData.js");
+	$virusText = "js/virusText.js?" . filemtime("js/virusText.js");
 ?>
 
 <!doctype html>
@@ -163,9 +164,9 @@
 						<div class="back-photo-slider">
 							<div class="photo"></div>
 						</div>
-						<div class="front-text"><img src="img/s-header-graphic-text.png" alt="바이러스"></div>
+						<div class="front-text"><img src="img/s-header-graphic-text.png" alt="바이러스" class="img-pc"><img src="img/s-header-graphic-text-m.png" alt="바이러스" class="img-m"></div>
 					</div>
-					<div class="cover-pattern"></div>
+					<div class="cover-pattern2"></div>
 					<div class="s-header-text">
 						
 					</div>
@@ -206,7 +207,8 @@
 						<div class="top-info">
 							<div class="page-title">							
 								<img src="img/page-title-01.png" class="main-title" alt="">
-								<img src="img/page-title-02.png" class="sub-title" alt="">
+								<img src="img/page-title-02.png" class="sub-title img-pc" alt="">
+								<img src="img/page-title-02-m.png" class="sub-title img-m" alt="">
 							</div>
 								
 							<div class="top-byline">
@@ -323,11 +325,11 @@
 										<p class="virus-top-desc">중증급성호흡기증후군 코로나바이러스(SARS-CoV)에 의해 발병하는 바이러스성 전염병. 2002년 11월에 중화인민공화국 광둥성에서 첫 환자가 발생한 이후 홍콩, 싱가포르, 베트남 등을 거쳐 세계적으로 확산됐다.</p>
 									</div>
 									<div class="card-con-col-2">
-										<div class="card-con-photo card-con-photo-sars">
+										<div class="card-con-photo">
 										</div>
 										<div class="card-con-list">
 											<div class="storytelling-as-numbers">
-												<h4>수치로 본 사스</h4>
+												<h4>수치로 본 전염병</h4>
 												<ul>
 													<li>
 														<p class="title">집중 발생 시기</p>
@@ -350,24 +352,21 @@
 														<p class="conts">비말(침방울 등) 통해 전염됨</p>
 													</li>
 												</ul>
-											</div>
-											<div class="others">
-												<ul>
-													<li>
-														<p class="title">‘슈퍼확산자’</p>
-														<p class="conts">2011년 11월 중국 남부 광둥성 일대에서 처음 환자가 보고되기 시작. 증상은 2~14일 잠복기 뒤 발열, 근육통과 두통, 기침, 호흡곤란, 폐 손상. 혈액 내 림프구 숫자가 줄어드는 증상도 나타남.</p>
-														<p class="conts">광둥성 광저우의 순얏센(쑨원)병원에 2003년 1월말 입원한 ‘저우줘펑’이라는 이름의 환자. 지역 상인으로만 알려져 있음. 병원 내에서 이 환자를 통해 의사와 간호사 등 의료진 30명 이상 감염, ‘슈퍼확산자’ 위험성 알려짐. 그를 치료한 의사가 감염된 뒤 홍콩으로 2차 슈퍼확산자가 됨. 이 의사를 시작으로 홍콩에 퍼져나갔고 홍콩을 통해 국제적으로 확산. 병원 내 2차 감염 막을 방역체제 없었던 것이 문제이고, 감염 발생 초반 대응을 못해 지역사회 확산을 못 막았고, 공항 방역도 부실할 수밖에 없었음.</p>
-													</li>
-													<li>
-														<p class="title">의료진 감염 비상</p>
-														<p class="conts">세계가 사스에 대해 알게 되고 경각심을 갖기 시작한 것은 2003년 2월에 이르러서야. 중국을 방문했다가 베트남 하노이를 경유해 싱가포르로 가려던 자니 첸이라는 미국인이 증상 나타나고 경유지인 하노이의 병원에서 사망. 하노이 병원 측은 일반적인 의료시설 2차 감염 예방수칙을 따랐음에도 의료진들 감염. 당시 하노이 상황을 조사한 이탈리아 의사 카를로 우르바니가 WHO와 베트남 정부에 보고. WHO는 2003년 3월 12일 세계에 경계령 내리고 미 CDC도 뒤따라 경고 발령. 하지만 캐나다, 미국, 몽골 등 곳곳으로 퍼져갔음.</p>
-														<p class="conts">특히 의료진 통한 2차, 3차 감염 심각. 의료진 감염만 1000여건, 30여명 사망. WHO에 보고했던 우르바니도 사스로 사망. 감염자 전체 치사율 9~10%이지만 60세 이상 치사율은 50% 육박.</p>
-														<p class="conts">2003년 7월 9일 WHO는 공식적으로 ‘사스 통제됐다’ 발표</p>
-													</li>
-												
-												</ul>
-											</div>
+											</div>											
 										</div>
+									</div>
+
+									<div class="text-section">
+										<h4>전염병의 확산 과정과 특징</h4>
+										<ul>
+											<li>
+												<p class="title">‘슈퍼확산자’</p>
+												<div class="para-holder">
+													<p class="conts">2011년 11월 중국 남부 광둥성 일대에서 처음 환자가 보고되기 시작. 증상은 2~14일 잠복기 뒤 발열, 근육통과 두통, 기침, 호흡곤란, 폐 손상. 혈액 내 림프구 숫자가 줄어드는 증상도 나타남.</p>
+													<p class="conts">광둥성 광저우의 순얏센(쑨원)병원에 2003년 1월말 입원한 ‘저우줘펑’이라는 이름의 환자. 지역 상인으로만 알려져 있음. 병원 내에서 이 환자를 통해 의사와 간호사 등 의료진 30명 이상 감염, ‘슈퍼확산자’ 위험성 알려짐. 그를 치료한 의사가 감염된 뒤 홍콩으로 2차 슈퍼확산자가 됨. 이 의사를 시작으로 홍콩에 퍼져나갔고 홍콩을 통해 국제적으로 확산. 병원 내 2차 감염 막을 방역체제 없었던 것이 문제이고, 감염 발생 초반 대응을 못해 지역사회 확산을 못 막았고, 공항 방역도 부실할 수밖에 없었음.</p>
+												</div>														
+											</li>
+										</ul>
 									</div>
 
 								</div>
@@ -513,6 +512,7 @@
     <!-- //전체 wrap (E)-->
 	<script type="text/javascript" src="<?php echo $js; ?>"></script>
 	<script type="text/javascript" src="<?php echo $caseData; ?>"></script>
+	<script type="text/javascript" src="<?php echo $virusText; ?>"></script>
 
 	<!-- imp 2019.04 YJ 추가-->
 	 <SCRIPT type="text/javaSCRIPT">

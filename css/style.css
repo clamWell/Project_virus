@@ -176,19 +176,19 @@ width: 27px; height: 30px;}
 	50%{-webkit-transform:translateY(-15px); transform:translateY(0)}to{-webkit-transform:translateY(-15px);transform:translateY(-15px)}	
 }
 
-.s-header {  position: relative; width:100%; box-sizing: border-box; height: 740px; overflow: hidden;}
+.s-header {  position: relative; width:100%; box-sizing: border-box; height: 740px; overflow: hidden; background: #111;}
 .s-header .s-header-graphic { width: 100%; height: 100%;}
 .s-header .s-header-graphic .back-photo-slider {width: 100%; height: 100%; position: relative;}
 .s-header .s-header-graphic .back-photo-slider .photo { animation: blur ease-in-out 10s infinite both; 
 width: 100%; height:100%; background: url("../img/s-header-graphic-backphoto-full.jpg") no-repeat; background-size: auto 100%;}
 .s-header .s-header-graphic .front-text { width:100%;height:100%; position: absolute; left: 0;top:0;}
 .s-header .s-header-graphic .front-text img { height:110%; position: relative; left: 50%; margin-left: -55%;
-/* animation: titlezoom 15s cubic-bezier(0.37,0.01,0.55,0.99) infinite both;  */}
+animation: titlezoom 15s ease infinite both; }
 
 @keyframes titlezoom {
-	0%{ transform:scale(2.0); opacity:1; }
-	98%{transform:scale(1.0); opacity:1; }
-	100%{transform:scale(4.0); opacity:0; }	
+	0%{ transform:scale(2.0); opacity:1; transform-origin: center;  }
+	98%{transform:scale(1.0); opacity:1; transform-origin: center;}
+	100%{transform:scale(3.0); opacity:0; transform-origin: center;}	
 }
 
 @keyframes blur {
@@ -326,21 +326,33 @@ text-align: center;  box-sizing: border-box; }
 .card-con-header .virus-thumb {}
 .card-con-header .virus-name { font-family: 'Noto Sans KR', 'notokr-regular'; font-size:50px; color:#111; text-align: center; font-weight: 300;}
 .card-con-header .virus-top-desc { max-width: 600px; font-size: 20px; margin: 20px auto;
-line-height: 1.6; letter-spacing: -0.03em;color: #111;  font-weight: 400; word-break: break-all;}
+line-height: 1.6; letter-spacing: -0.03em;color: #111;  font-weight: 400; word-break: break-all; display:none;}
 .card-con-col-2 { width:100%; width: 1200px; margin: 0 auto; position: relative; }
-.card-con-col-2 .card-con-photo { width: 500px; height: 1000px; float:left;  }
-.card-con-col-2 .card-con-photo-sars { background: url("../img/card-con-virus-1.jpg") no-repeat; }
-.card-con-col-2 .card-con-list { width: 700px; box-sizing: border-box; padding: 0px 50px; float:left;}
+.card-con-col-2 .card-con-photo { width: 500px; height: 800px; float:left; overflow: hidden; }
+.card-con-col-2 .card-con-photo-sars { background: url("../img/card-con-virus-sars.jpg") no-repeat; }
+.card-con-col-2 .card-con-photo-flu { background: url("../img/card-con-virus-flu.jpg") no-repeat; }
+.card-con-col-2 .card-con-photo-mers { background: url("../img/card-con-virus-mers.jpg") no-repeat; }
+.card-con-col-2 .card-con-photo-corona { background: url("../img/card-con-virus-corona.jpg") no-repeat; }
+.card-con-col-2 .card-con-list { width: 700px; box-sizing: border-box; padding: 0px 50px; float:left;  margin-top: 50px;}
 .card-con-col-2::after { clear: both;display:block; content:"";}
 
 .storytelling-as-numbers { margin-bottom: 50px; box-sizing: border-box; }
 .storytelling-as-numbers h4 { font-family: 'Noto Sans KR', 'notokr-regular';  font-size: 26px; color: #111;  margin-bottom: 20px;} 
 .card-con-col-2 .card-con-list ul {  width: 100%;  position: relative;}
-.card-con-col-2 .card-con-list ul li { margin: 20px 0; font-size: 20px; line-height: 1.6; letter-spacing: -0.03em; color: #111;
+.card-con-col-2 .card-con-list ul li { margin: 35px 0; font-size: 20px; line-height: 1.6; letter-spacing: -0.03em; color: #111;
  font-weight: 400;word-break: break-all;}
 .card-con-col-2 .card-con-list ul li p.title { border-left: 4px solid #111; padding-left: 10px; font-weight: bold;margin-bottom: 10px; line-height: 1;}
 .card-con-col-2 .card-con-list ul li p.conts { text-indent: 4px; margin: 10px 0; }
 .card-con-col-2 .card-con-list ul li p.conts .sm { display: block; opacity:0.7; font-size: 16px; }
+
+.text-section { margin: 50px auto; max-width: 700px;  }
+.text-section h4 { font-family: 'Noto Sans KR', 'notokr-regular';  font-size: 26px; color: #111;  margin-bottom: 20px;}
+.text-section ul {  width: 100%;  position: relative;}
+.text-section ul li { margin: 50px 0; font-size: 20px; line-height: 1.6; letter-spacing: -0.03em; color: #111;
+ font-weight: 400;word-break: break-all;}
+.text-section ul li p.title { border-left: 4px solid #111; padding-left: 10px; font-weight: bold;margin-bottom: 10px; line-height: 1;}
+.text-section ul li p.conts { text-indent: 8px; margin: 15px 0; }
+.text-section ul li p.conts .sm { display: block; opacity:0.7; font-size: 16px; }
 
 .see-more-btn-holder { margin: 100px auto; }
 .see-more-btn { transition:all 0.3s ease 0s; font-family: 'Noto Sans KR', 'notokr-regular'; letter-spacing: 0;cursor: pointer; width: 400px; margin: 0 auto; box-sizing: border-box; padding: 30px; text-align: center;
@@ -390,56 +402,131 @@ background: url("http://img.khan.co.kr/spko/storytelling/2018/big/outlink.png") 
 /***** 전체 기본 CSS - 모바일 기준******/
 /*-------------------------------------*/
 
-/***** ★★★노트북 CSS*****/
-@media screen and (max-width: 1380px) and (max-height: 780px)  {
+/***** 노트북 *****/
+@media screen and (max-width: 1380px) {
 
+.s-header { height: 500px; }
+.s-header .s-header-graphic .front-text img { height: 100%; }
+@keyframes blur {
+	0%{background-position:0 0;filter:blur(0px);}
+	1.5%{background-position:0 0;filter:blur(2px); }
+	4%{background-position:0 0;filter:blur(0px);}
+	
+	25%{background-position:0 0;filter:blur(0px);}
+	30.09%{background-position:-1550px 0;filter:blur(10px);}
+	31.0%{background-position:-1500px 0;filter:blur(0px);}
+
+	55.0%{background-position:-1500px 0;filter:blur(0px);}
+	60.09%{background-position:-3050px 0;filter:blur(10px);}
+	61.0{background-position:-3000px 0;filter:blur(00px);}
+
+	85.0%{background-position:-3000px 0;filter:blur(0px);}
+	90.9%{background-position:-50px 0;filter:blur(0px);}			
+	91.0%{background-position:0px 0;filter:blur(10px);}
+	100%{background-position:0 0;filter:blur(0px); }
+}
+
+.page-title .main-title { width: 350px; }
+.pro-des p { font-size: 22px; }
+.world-map-area .map-plots-graph .map-holder { height: 600px; }
+.card-con-col-2 .card-con-list { width: 650px;}
 
 
 }
 
 
-/****** 패드 용*******/
-@media screen and (max-width: 801px) {
 
-}
-
-/*****아이폰6S****/
-@media screen and (max-width: 500px) {
-
-.img-pc {  display:none; }
+/***** 모바일 Portraits ****/
+@media screen and (max-width: 800px) {
+.img-pc { display:none; }
 .img-m { display:block; }
 
+.s-header { height: 500px; }
+.s-header .s-header-graphic .back-photo-slider .photo { background: url("../img/s-header-graphic-backphoto-full-m.jpg") no-repeat; background-size: auto 100%; 
+animation: blur ease-in-out 7s infinite both;}
+@keyframes blur {
+	0%{background-position:0 0;filter:blur(0px);}
+	1.5%{background-position:0 0;filter:blur(2px); }
+	4%{background-position:0 0;filter:blur(0px);}
+	
+	25%{background-position:0 0;filter:blur(0px);}
+	30.09%{background-position:-550px 0;filter:blur(10px);}
+	31.0%{background-position:-500px 0;filter:blur(0px);}
+
+	55.0%{background-position:-500px 0;filter:blur(0px);}
+	60.09%{background-position:-1050px 0;filter:blur(10px);}
+	61.0{background-position:-1000px 0;filter:blur(00px);}
+
+	85.0%{background-position:-1000px 0;filter:blur(0px);}
+	90.9%{background-position:-50px 0;filter:blur(0px);}			
+	91.0%{background-position:0px 0;filter:blur(10px);}
+	100%{background-position:0 0;filter:blur(0px); }
+}
+.s-header .s-header-graphic .front-text {   left: 50%;margin-left: -190px; }
+.s-header .s-header-graphic .front-text img { height: 500px;animation: titlezoom 10s ease infinite both; }
+.page-title .main-title { width: 250px; }
+.page-title .sub-title { width: 300px; }
+.page-title .img-pc { display:none; }
+.top-byline ul li { font-size: 12px; line-height: 1.4;}
+.top-info { margin-bottom: 70px; }
+.pro-des p {width: 100%; box-sizing: border-box; padding: 0px 12px; font-size: 20px; } 
+.world-map-area { padding: 50px 0; }
+.virus-type-change { margin: 20px auto; }
+.world-map-area .map-plots-graph .map-holder {  height: 400px; }
+.virus-type-change ul li { padding: 5px 10px; font-size: 15px; }
+.map-des {  font-size: 14px; line-height: 1.4; width: 100%; box-sizing: border-box; padding: 0px 30px; }
+.map-info h3 { font-size: 13px; }
+.leaflet-container .leaflet-control-attribution {opacity: 0.4; }
+.switch-btn-holder .each-btn { font-size: 15px; }
+.data-type-change {  bottom: 15px; }
+.switch-btn-holder .each-btn > span { font-size: 22px; top:-30px; }
+
+.personCard { margin: 100px auto;}
+.personCard .card-des { box-sizing: border-box; padding: 0px 15px; background: none;}
+.personCard .card-des p { font-size: 16px;}
+.slider {margin-top:0;}
+.slider-body ul li { width: 100%; box-sizing: border-box; height: 400px; margin: 0px 5px; }
+.slider-body { transform: translateX(25px);} 
+.slider-body ul li .person-info { width: 100%; margin-left:0; bottom: 0px; opacity:1; }
+.slider-body ul li:hover { transform: translate(0px, 0px); }
+.slider-body ul li:active { transform: translate(3px, 3px); }
+.slider .next { right: 0px; z-index:2; width: 60px; box-sizing:border-box; padding: 15px;
+background: rgba(0,0,0,0.5); border-radius: 10px 0px 0px 10px; margin-top: -30px; }
+.slider .prev {left: 0px; z-index:2; width: 60px;  box-sizing:border-box; padding: 15px;
+background: rgba(0,0,0,0.5); border-radius: 0px 10px 10px 0px;margin-top: -30px;}
+.slider-body ul li:hover { transform: translate(0px, 0px); }
+.slider .arrow { display:block; }
+
+.card-con-header { padding: 40px 0; padding-bottom: 20px; }
+.card-con-header .virus-name { font-size: 32px; }
+.card-con-col-2 {  box-sizing: border-box; padding: 0px 15px; width: 100%; }
+.card-con-col-2 .card-con-photo {  height: 300px; float: none; width: 100%;}
+.card-con-col-2 .card-con-list {float: none; width: 100%; padding: 0px 0px; margin: 20px 0;}
+.card-con-col-2 .card-con-list {}
+.storytelling-as-numbers h4 { font-size: 20px; margin-bottom: 10px;}
+.card-con-col-2 .card-con-list ul li { font-size: 18px; margin: 25px 0; }
+.text-section { box-sizing: border-box; padding: 0px 15px; width: 100%; }
+.text-section h4 { font-size: 20px; margin-bottom: 10px;}
+.text-section ul li { font-size: 18px; margin: 25px 0; }
+.each-card-contents-wrap { padding-bottom: 30px; }
+.see-more-btn-holder { margin: 50px auto;box-sizing: border-box;  width: 100%; padding: 0px 20px;}
+.see-more-btn { width: 100%; padding: 25px; font-size: 15px;}
+.rel-article-area h4 { font-size: 16px; }
+.rel-article-area { box-sizing: border-box; padding: 0px 15px; margin: 50px 0; }
+.art-box { border-radius: 5px; border-bottom:0; }
+.art-box .thumb { max-height: 200px; }
+.bottom-byline ul { padding: 30px 0; }
+
+
+
 
 }
 
-
-
-/****아이폰6****/
-@media screen and (max-width: 376px) {
+/****** 모바일 Landscape *****/
+@media (max-width: 800px) and (orientation: landscape){
 
 
 }
-
-
-
-/*****G3****/
-@media screen and (max-width: 361px) {
-
-}
-
-
-/**** 갤럭시 S6 **/
-@media screen and (max-width: 341px){
-
-}
-
-
-/****아이폰5, 4 ****/
-@media screen and (max-width: 321px){
-
-}
-
-
 
 
 

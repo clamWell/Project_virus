@@ -61,11 +61,17 @@ $(function() {
 
 		}
 	}
+
+	$(".arrow").on("click", function(e){
+		e.preventDefault();
+		var drct = $(this).attr("id");
+		Slider.moveSlide(drct);
+	});
 	// Slider 
 
 	
 	$(".loading-page").fadeOut(500, function(){		
-
+		Slider.setSlider();
 
 	});
 	
@@ -77,8 +83,8 @@ $(function() {
 	});
 
 	// (Start) Plots map using leaflet.js
-	var mapZoom = (isMobile == true) ? [6, 6, 8] : [7, 7, 8];
-	var map = L.map("map").setView([30.782613, 114.366952], 3);
+	var mapZoom = (isMobile == true) ? 2 :3;
+	var map = L.map("map").setView([30.782613, 114.366952], mapZoom);
 	/*
 	var mapTile = new L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
@@ -88,7 +94,7 @@ $(function() {
 
 	var mapTile = new L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-		minZoom: 3,
+		minZoom: mapZoom,
 		maxZoom: 5,
 	});
 
@@ -107,6 +113,13 @@ $(function() {
 		this._div.innerHTML = '<h3>각 전염병별 확산지역</h3>'
 	};
 	info.addTo(map);
+
+/*
+    var values = dateValues.map(function(v) {
+      return v.value
+    });
+    var maxValue = d3.max(values);
+    var minValue = d3.min(values);*/
 
 
 	var totalCases;
@@ -192,6 +205,28 @@ $(function() {
 	});
 	// (End) Plots map using leaflet.js
 
+
+	// Bottom Virus Card (Start)
+	function makeCardContents(virus){
+		var cardData = virusText.filter( function(v,i,a){
+			return a[i].virus == virus;
+		});
+		var virusNameKor = { "sars":"사스(SARS)", "flu":"신종플루(H1N1)", "mers":"메스르(MERS)","corona":"신종코로나" };
+		$(".card-con-header .virus-name").html( virusNameKor[virus]);
+		$(".card-con-col-2 .card-con-photo").css({"background":"url(img/card-con-virus-"+virus+".jpg) no-repeat" });
+
+		$(".storytelling-as-numbers > ul").html("");
+		$(".text-section > ul").html("");
+		for(c=0; c<cardData.length;c++){
+			if(cardData[c].listType == "number"){			
+				$(".storytelling-as-numbers > ul").append("<li><p class='title'>"+cardData[c].title+"</p><p class='conts'>"+cardData[c].conts+"</p></li>");
+			}else if(cardData[c].listType == "text"){
+				$(".text-section > ul").append("<li><p class='title'>"+cardData[c].title+"</p><div class='para-holder'>"+cardData[c].conts+"</div></li>");
+			}				
+		}
+	
+	}
+
 	function showCardContents(){
 		$(".slider-bottom").slideDown( function(){
 			var cardConPos = $(".card-con-header").offset().top-150;
@@ -201,6 +236,7 @@ $(function() {
 	$(".slider-body ul li").on("click", function(e){
 		$(".slider-body ul li").removeClass("on");
 		$(this).addClass("on");
+		makeCardContents( $(this).attr("data-card-virus") );
 		showCardContents();
 	});
 
@@ -215,6 +251,7 @@ $(function() {
 	$(".see-more-btn").on("click", function(e){
 		hideCardContents();
 	});
+	// Bottom Virus Card (End)
 
 
 
