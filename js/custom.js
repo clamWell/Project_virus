@@ -2,7 +2,7 @@ $(function() {
 	var ieTest = false,
 		screenWidth = $(window).width(),
 		screenHeight = $(window).height(),
-		imgURL = "http://img.khan.co.kr/spko/storytelling/2020/coronavirus/",
+		imgURL = "http://img.khan.co.kr/spko/storytelling/2020/virus/",
 		isMobile = screenWidth <= 800 && true || false,
 		isNotebook = (screenWidth <= 1300 && screenHeight < 750) && true || false,
 		isMobileLandscape = ( screenWidth > 400 && screenWidth <= 800 && screenHeight < 450 ) && true || false;
@@ -32,7 +32,7 @@ $(function() {
 		var $Base = $(".slider-body ul li");
 		var margin = isMobile? 10 : 20;
 		if (isMobile==true) {
-			var BaseWidth_md = ($(".slider-body").width()-40)-20; 
+			var BaseWidth_md = ($(".slider-body").width()/2)-20; 
 			$Base.css({"width": BaseWidth_md });
 			baseWidth = BaseWidth_md + margin; 
 		}else {
@@ -52,8 +52,8 @@ $(function() {
 			}
 
 		}else if(drct=="next"){ // 다음
-			if(Slider.index==Slider.itemNumb-(isMobile? 1: 4) ){}
-			else if(Slider.index<Slider.itemNumb-(isMobile? 1: 4) ){
+			if(Slider.index==Slider.itemNumb-(isMobile? 3: 4) ){}
+			else if(Slider.index<Slider.itemNumb-(isMobile? 3: 4) ){
 				Slider.index +=1;
 				var moving = baseWidth*Slider.index;
 				$(".slider-body ul").animate({"left":-moving}, 500,"easeOutCubic");
@@ -83,7 +83,7 @@ $(function() {
 	});
 
 	// (Start) Plots map using leaflet.js
-	var mapZoom = (isMobile == true) ? 2 :3;
+	var mapZoom = (isMobile == true) ? 1 :2;
 	var map = L.map("map").setView([30.782613, 114.366952], mapZoom);
 	/*
 	var mapTile = new L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -95,9 +95,8 @@ $(function() {
 	var mapTile = new L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 		minZoom: mapZoom,
-		maxZoom: 5,
+		maxZoom: 8,
 	});
-
 
 
 	map.addLayer(mapTile);
@@ -113,7 +112,45 @@ $(function() {
 		this._div.innerHTML = '<h3>각 전염병별 확산지역</h3>'
 	};
 	info.addTo(map);
+	/*
+	function mapStyle(feature) {
+		return {
+			fillColor: "#111",
+			weight: 2,
+			opacity: 0.5,
+			color: "#fff",
+			weight: 0.5,
+			dashArray: "0",
+			fillOpacity: 0.7
+		};
+	}
+	function highlightFeature(e) {
+		var layer = e.target;
+		layer.setStyle({
+			fillColor: "#333",
+			color: "#ff8a00"
+		});
+		console.log(layer.feature.properties.name);
+		if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+			layer.bringToFront();
+		}
+	}
 
+	function resetHighlight(e) {
+		var layer = e.target;
+		layer.setStyle({ 
+			fillColor: "#111",
+			color: "#fff"
+		}); 
+	}
+	function onEachFeature(d, layer) {
+		layer.on({
+			mouseover: highlightFeature,
+			mouseout: resetHighlight
+		});
+	}
+
+	var worldmapPolygon = L.geoJson(worldmap, {style: mapStyle, onEachFeature: onEachFeature}).addTo(map);
 /*
     var values = dateValues.map(function(v) {
       return v.value
@@ -139,10 +176,18 @@ $(function() {
 		var type = (type == "cases")? "cases" : "death";
 		var circleColor = (type == "cases")? "#ff8a00" : "#d10000";
 		
+		$(".graph-wrap ul").html("");
+
 		for (var i=0; i<data.length; i++) {
-			if( data[i][type] !== 0 ){				
-				var radius = Math.sqrt( data[i][type] ) * 30000 ;
-				//console.log(radius, data[i].lat, data[i].lot);
+			if( data[i][type] !== 0 ){							
+				if(virus=="flu"){
+					var radius = Math.sqrt( data[i][type] ) * 15000 ;
+					if(radius >= 500000){
+						radius = 500000;
+					}
+				}else{
+					var radius = Math.sqrt( data[i][type] ) * 20000;
+				}
 				var circles = new L.circle([data[i].Latitude, data[i].Longitude],{
 					color: circleColor,
 					fillColor: circleColor,
@@ -153,7 +198,12 @@ $(function() {
 					weight:2,	
 					radius: radius
 				}).bindPopup('<p class="nation-info">'+data[i].nation+'</p><p class="numb">'+ data[i][type] +'명</p>');
-				circlePos.addLayer(circles);																		
+				circlePos.addLayer(circles);		
+				
+				$(".graph-wrap ul").append("<li><em class='country-name'>"+data[i].nation+"</em><div class='pole pole-case'><span class='number'>"+data[i]["cases"]+"("+data[i]["death"]+")</span></li></div><div class='pole pole-death'></div>");
+				$(".graph-wrap ul li").eq(i).find(".pole-case").css({"width":data[i]["cases"]/10 });
+				$(".graph-wrap ul li").eq(i).find(".pole-death").css({"width":data[i]["death"]/10 });
+
 			}
 			
 		}	
@@ -207,14 +257,16 @@ $(function() {
 
 
 	// Bottom Virus Card (Start)
-	function makeCardContents(virus){
+	var v_card = {},
+		$card = $(".slider-body ul li"),
+		virusNameKor = { "sars":"사스(SARS)", "flu":"신종플루(H1N1)", "mers":"메스르(MERS)","corona":"신종코로나" };
+	v_card.makeCardContents = function(virus){
 		var cardData = virusText.filter( function(v,i,a){
 			return a[i].virus == virus;
-		});
-		var virusNameKor = { "sars":"사스(SARS)", "flu":"신종플루(H1N1)", "mers":"메스르(MERS)","corona":"신종코로나" };
+		});		
 		$(".card-con-header .virus-name").html( virusNameKor[virus]);
-		$(".card-con-col-2 .card-con-photo").css({"background":"url(img/card-con-virus-"+virus+".jpg) no-repeat" });
-
+		var cardImgUrl = (isMobile==true)? ("url("+imgURL+"card-con-virus-"+virus+"-m.jpg) no-repeat"): ("url("+imgURL+"card-con-virus-"+virus+".jpg) no-repeat");
+		$(".card-con-col-2 .card-con-photo").css({"background": cardImgUrl });
 		$(".storytelling-as-numbers > ul").html("");
 		$(".text-section > ul").html("");
 		for(c=0; c<cardData.length;c++){
@@ -225,31 +277,29 @@ $(function() {
 			}				
 		}
 	
-	}
-
-	function showCardContents(){
+	},
+	v_card.showCardContents = function(){
 		$(".slider-bottom").slideDown( function(){
 			var cardConPos = $(".card-con-header").offset().top-150;
-			$("html, body").animate({scrollTop: cardConPos},1200, "easeOutCubic");
+			$("html, body").animate({scrollTop: cardConPos},1000, "easeOutCubic");
 		});		
-	};	
-	$(".slider-body ul li").on("click", function(e){
-		$(".slider-body ul li").removeClass("on");
-		$(this).addClass("on");
-		makeCardContents( $(this).attr("data-card-virus") );
-		showCardContents();
-	});
-
-	function hideCardContents(){
+	}	
+	v_card.hideCardContents = function(){
 		var cardSliderPos = $(".slider").offset().top-(screenHeight*0.3);
 		$("html, body").animate({scrollTop: cardSliderPos},1000, "easeOutCubic",function(){
 			$(".slider-bottom").hide();
 		});
-		$(".slider-body ul li").removeClass("on");
+		$card.removeClass("on");
 	};
-	
+
+	$card.on("click", function(e){
+		$card.removeClass("on");
+		$(this).addClass("on");
+		v_card.makeCardContents($(this).attr("data-card-virus"));
+		v_card.showCardContents();
+	});	
 	$(".see-more-btn").on("click", function(e){
-		hideCardContents();
+		v_card.hideCardContents();
 	});
 	// Bottom Virus Card (End)
 

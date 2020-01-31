@@ -176,11 +176,11 @@ width: 27px; height: 30px;}
 	50%{-webkit-transform:translateY(-15px); transform:translateY(0)}to{-webkit-transform:translateY(-15px);transform:translateY(-15px)}	
 }
 
-.s-header {  position: relative; width:100%; box-sizing: border-box; height: 740px; overflow: hidden; background: #111;}
+.s-header {  position: relative; width:100%; box-sizing: border-box; height: 650px; overflow: hidden; background: #111;}
 .s-header .s-header-graphic { width: 100%; height: 100%;}
 .s-header .s-header-graphic .back-photo-slider {width: 100%; height: 100%; position: relative;}
 .s-header .s-header-graphic .back-photo-slider .photo { animation: blur ease-in-out 10s infinite both; 
-width: 100%; height:100%; background: url("../img/s-header-graphic-backphoto-full.jpg") no-repeat; background-size: auto 100%;}
+width: 100%; height:100%; background: url("http://img.khan.co.kr/spko/storytelling/2020/virus/s-header-graphic-backphoto-full.jpg") no-repeat; background-size: auto 100%;}
 .s-header .s-header-graphic .front-text { width:100%;height:100%; position: absolute; left: 0;top:0;}
 .s-header .s-header-graphic .front-text img { height:110%; position: relative; left: 50%; margin-left: -55%;
 animation: titlezoom 15s ease infinite both; }
@@ -222,7 +222,8 @@ animation: titlezoom 15s ease infinite both; }
 .top-info {  margin: 50px auto;     margin-bottom: 120px;}
 .page-title { }
 .page-title .main-title {display: block; margin: 0 auto; margin-bottom: 40px;}
-.page-title .sub-title{display: block; margin: 0 auto; }
+.page-title .sub-title {display: block; margin: 0 auto; }
+.page-title .img-m { display:none; }
 
 .top-byline { margin: 30px auto;  }
 .top-byline ul { font-family: 'Noto Sans KR', 'notokr-regular';  }
@@ -249,7 +250,7 @@ letter-spacing: 0; text-shadow: 0px 0px 2px #111;}
 .world-map-area .map-plots-graph { width: 100%; position: relative; }  
 .world-map-area .map-plots-graph .map-holder { height: 700px; width:100%; 
 box-sizing: border-box; border-top: 5px solid #9f0000; border-bottom: 5px solid #9f0000;} 
-.world-map-area .map-plots-graph .map-holder #map { background:#111; background: #fff; width: 100%; height: 100%; } 
+.world-map-area .map-plots-graph .map-holder #map {  background: #262626; width: 100%; height: 100%; } 
 .virus-type-change { margin: 30px auto; }
 .virus-type-change ul { text-align: center; }
 .virus-type-change ul li {transition:all 0.3s ease 0s;  display: inline; box-sizing: border-box; padding: 5px 15px; background: rgba(255,255,255,0.1);
@@ -278,6 +279,23 @@ font-weight:bold; color:#fff;  text-shadow: 1px 1px 1px rgba(0,0,0,0.8);  width:
 .leaflet-popup-content p.nation-info {  margin: 0px; font-size: 14px;}
 .leaflet-popup-content p.numb { margin: 0px; font-size: 16px; color: #ff2d2d; }
 
+.map-over-graph { position: absolute; bottom: 0; left: 0; top: auto; overflow:hidden;  z-index: 999; }
+.graph-wrap { box-sizing: border-box;  padding: 20px; width:100%; }
+.graph-wrap h4 { color:#fff; font-size: 16px; font-family: 'Noto Sans KR', 'notokr-regular';  margin-bottom: 10px; }
+.graph-wrap h4 span { font-size: 13px;font-family: 'Noto Sans KR', 'notokr-regular';  opacity:0.5; padding-left: 5px; }
+.graph-wrap ul { padding-left: 80px; box-sizing: border-box; width: 100%; max-width: 400px; }
+.graph-wrap ul li { opacity: 0.85; margin:0px; margin-bottom: 10px;  height: 20px; width: 100%; position: relative; }
+.graph-wrap ul li .country-name { color:#ddd;  position: absolute; left: -90px; width: 80px; font-size: 13px; line-height: 1; font-style: normal;  
+letter-spacing: 0; text-align: right;}
+.graph-wrap ul li .pole { height: 100%;  width: 10px; background:#ff9c34; position: relative; top: 0px; left: 0px; }
+.graph-wrap ul li.on { opacity: 1; }
+.graph-wrap ul li.on .pole { background: #ff4747; }
+.graph-wrap ul li.on em  {color: #ff4747; font-weight: bold;}
+.graph-wrap ul li .pole-case {}
+.graph-wrap ul li .pole-death {position: absolute;}
+.graph-wrap ul li .number {display: block; width: inherit; line-height: 20px;padding-left: 7px; letter-spacing: 0;
+position: absolute; font-size: 12px;color:#fff; font-family: 'Noto Sans KR', 'notokr-regular'; right:0; top:0;}
+
 .personCard { margin: 130px auto; width:100%; }
 .personCard .card-des { max-width: 500px;margin: 0 auto; /* background: rgba(255,255,255,0.1);border-radius: 8px; */}
 .personCard .card-des p { text-align: center; color:#fff; font-weight: bold;  font-family: 'Noto Sans KR', 'notokr-regular'; 
@@ -305,10 +323,10 @@ float: left; display: inline-block;  margin: 0 10px; box-sizing: border-box; box
 text-align: center;  box-sizing: border-box; }
 .slider-body ul li:hover > div > .person-info  {opacity:1;}
 .slider-body ul li.on > div > .person-info  {opacity:1;}
-.card--1 { width:100%; height:100%; background:url("../img/virus-1.jpg") no-repeat; background-size: cover; background-position: center; }
-.card--2 { width:100%; height:100%; background:url("../img/virus-2.jpg") no-repeat; background-size: cover; background-position: center; }
-.card--3 { width:100%; height:100%; background:url("../img/virus-3.jpg") no-repeat; background-size: cover; background-position: center; }
-.card--4 { width:100%; height:100%; background:url("../img/virus-4.jpg") no-repeat; background-size: cover; background-position: center; }
+.card--1 { width:100%; height:100%; background:url("http://img.khan.co.kr/spko/storytelling/2020/virus/virus-1.jpg") no-repeat; background-size: cover; background-position: center; }
+.card--2 { width:100%; height:100%; background:url("http://img.khan.co.kr/spko/storytelling/2020/virus/virus-2.jpg") no-repeat; background-size: cover; background-position: center; }
+.card--3 { width:100%; height:100%; background:url("http://img.khan.co.kr/spko/storytelling/2020/virus/virus-3.jpg") no-repeat; background-size: cover; background-position: center; }
+.card--4 { width:100%; height:100%; background:url("http://img.khan.co.kr/spko/storytelling/2020/virus/virus-4.jpg") no-repeat; background-size: cover; background-position: center; }
 .slider .shadow-right { position: absolute; top: 7%; width: 10px; height: 85%; overflow: hidden; right: 0px;  }
 .slider .shadow-right > img, .album-holder .album-left > img { width: 100%; }
 .slider .shadow-left {position: absolute; top: 7%; width: 10px; height: 85%; overflow: hidden; left: 0px; }
@@ -329,10 +347,10 @@ text-align: center;  box-sizing: border-box; }
 line-height: 1.6; letter-spacing: -0.03em;color: #111;  font-weight: 400; word-break: break-all; display:none;}
 .card-con-col-2 { width:100%; width: 1200px; margin: 0 auto; position: relative; }
 .card-con-col-2 .card-con-photo { width: 500px; height: 800px; float:left; overflow: hidden; }
-.card-con-col-2 .card-con-photo-sars { background: url("../img/card-con-virus-sars.jpg") no-repeat; }
-.card-con-col-2 .card-con-photo-flu { background: url("../img/card-con-virus-flu.jpg") no-repeat; }
-.card-con-col-2 .card-con-photo-mers { background: url("../img/card-con-virus-mers.jpg") no-repeat; }
-.card-con-col-2 .card-con-photo-corona { background: url("../img/card-con-virus-corona.jpg") no-repeat; }
+.card-con-col-2 .card-con-photo-sars { background: url("http://img.khan.co.kr/spko/storytelling/2020/virus/card-con-virus-sars.jpg") no-repeat; }
+.card-con-col-2 .card-con-photo-flu { background: url("http://img.khan.co.kr/spko/storytelling/2020/virus/card-con-virus-flu.jpg") no-repeat; }
+.card-con-col-2 .card-con-photo-mers { background: url("http://img.khan.co.kr/spko/storytelling/2020/virus/card-con-virus-mers.jpg") no-repeat; }
+.card-con-col-2 .card-con-photo-corona { background: url("http://img.khan.co.kr/spko/storytelling/2020/virus/card-con-virus-corona.jpg") no-repeat; }
 .card-con-col-2 .card-con-list { width: 700px; box-sizing: border-box; padding: 0px 50px; float:left;  margin-top: 50px;}
 .card-con-col-2::after { clear: both;display:block; content:"";}
 
@@ -341,7 +359,8 @@ line-height: 1.6; letter-spacing: -0.03em;color: #111;  font-weight: 400; word-b
 .card-con-col-2 .card-con-list ul {  width: 100%;  position: relative;}
 .card-con-col-2 .card-con-list ul li { margin: 35px 0; font-size: 20px; line-height: 1.6; letter-spacing: -0.03em; color: #111;
  font-weight: 400;word-break: break-all;}
-.card-con-col-2 .card-con-list ul li p.title { border-left: 4px solid #111; padding-left: 10px; font-weight: bold;margin-bottom: 10px; line-height: 1;}
+.card-con-col-2 .card-con-list ul li p.title { border-left: 4px solid #111; padding-left: 10px; font-weight: bold;margin-bottom: 10px; line-height: 1;
+font-family: 'Noto Sans KR', 'notokr-regular';}
 .card-con-col-2 .card-con-list ul li p.conts { text-indent: 4px; margin: 10px 0; }
 .card-con-col-2 .card-con-list ul li p.conts .sm { display: block; opacity:0.7; font-size: 16px; }
 
@@ -441,8 +460,8 @@ background: url("http://img.khan.co.kr/spko/storytelling/2018/big/outlink.png") 
 .img-pc { display:none; }
 .img-m { display:block; }
 
-.s-header { height: 500px; }
-.s-header .s-header-graphic .back-photo-slider .photo { background: url("../img/s-header-graphic-backphoto-full-m.jpg") no-repeat; background-size: auto 100%; 
+.s-header { height: 350px; }
+.s-header .s-header-graphic .back-photo-slider .photo { background: url("http://img.khan.co.kr/spko/storytelling/2020/virus/s-header-graphic-backphoto-full-m.jpg") no-repeat; background-size: auto 100%; 
 animation: blur ease-in-out 7s infinite both;}
 @keyframes blur {
 	0%{background-position:0 0;filter:blur(0px);}
@@ -450,25 +469,26 @@ animation: blur ease-in-out 7s infinite both;}
 	4%{background-position:0 0;filter:blur(0px);}
 	
 	25%{background-position:0 0;filter:blur(0px);}
-	30.09%{background-position:-550px 0;filter:blur(10px);}
-	31.0%{background-position:-500px 0;filter:blur(0px);}
+	30.09%{background-position:-380px 0;filter:blur(10px);}
+	31.0%{background-position:-350px 0;filter:blur(0px);}
 
-	55.0%{background-position:-500px 0;filter:blur(0px);}
-	60.09%{background-position:-1050px 0;filter:blur(10px);}
-	61.0{background-position:-1000px 0;filter:blur(00px);}
+	55.0%{background-position:-350px 0;filter:blur(0px);}
+	60.09%{background-position:-730px 0;filter:blur(10px);}
+	61.0{background-position:-700px 0;filter:blur(00px);}
 
-	85.0%{background-position:-1000px 0;filter:blur(0px);}
-	90.9%{background-position:-50px 0;filter:blur(0px);}			
+	85.0%{background-position:-700px 0;filter:blur(0px);}
+	90.9%{background-position:-30px 0;filter:blur(0px);}			
 	91.0%{background-position:0px 0;filter:blur(10px);}
 	100%{background-position:0 0;filter:blur(0px); }
 }
-.s-header .s-header-graphic .front-text {   left: 50%;margin-left: -190px; }
-.s-header .s-header-graphic .front-text img { height: 500px;animation: titlezoom 10s ease infinite both; }
+.s-header .s-header-graphic .front-text {   left: 50%;margin-left: -150px; }
+.s-header .s-header-graphic .front-text img { height: 350px;animation: titlezoom 10s ease infinite both; }
 .page-title .main-title { width: 250px; }
 .page-title .sub-title { width: 300px; }
 .page-title .img-pc { display:none; }
+.page-title .img-m { display:block; }
 .top-byline ul li { font-size: 12px; line-height: 1.4;}
-.top-info { margin-bottom: 70px; }
+.top-info { margin: 0 auto; margin-bottom: 70px; }
 .pro-des p {width: 100%; box-sizing: border-box; padding: 0px 12px; font-size: 20px; } 
 .world-map-area { padding: 50px 0; }
 .virus-type-change { margin: 20px auto; }
@@ -485,9 +505,11 @@ animation: blur ease-in-out 7s infinite both;}
 .personCard .card-des { box-sizing: border-box; padding: 0px 15px; background: none;}
 .personCard .card-des p { font-size: 16px;}
 .slider {margin-top:0;}
-.slider-body ul li { width: 100%; box-sizing: border-box; height: 400px; margin: 0px 5px; }
-.slider-body { transform: translateX(25px);} 
+.slider-body ul li { width: 100%; box-sizing: border-box; height: 250px; margin: 0px 5px; }
+.slider-body { transform: translateX(10px);} 
 .slider-body ul li .person-info { width: 100%; margin-left:0; bottom: 0px; opacity:1; }
+.slider-body ul li .person-info img {height: 22px; width: auto; }
+.slider-body ul li .person-info .info-txt { font-size: 15px; } 
 .slider-body ul li:hover { transform: translate(0px, 0px); }
 .slider-body ul li:active { transform: translate(3px, 3px); }
 .slider .next { right: 0px; z-index:2; width: 60px; box-sizing:border-box; padding: 15px;
@@ -496,6 +518,7 @@ background: rgba(0,0,0,0.5); border-radius: 10px 0px 0px 10px; margin-top: -30px
 background: rgba(0,0,0,0.5); border-radius: 0px 10px 10px 0px;margin-top: -30px;}
 .slider-body ul li:hover { transform: translate(0px, 0px); }
 .slider .arrow { display:block; }
+.slider-body ul li.on {transform: translate(0px, 0px);  box-shadow: 2px 2px 0px #ff2424; }
 
 .card-con-header { padding: 40px 0; padding-bottom: 20px; }
 .card-con-header .virus-name { font-size: 32px; }

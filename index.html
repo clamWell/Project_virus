@@ -3,6 +3,7 @@
 	$css = "css/style.css?" . filemtime("css/style.css");
 	$js = "js/custom.js?" . filemtime("js/custom.js");
 	$caseData = "js/caseData.js?" . filemtime("js/caseData.js");
+	$worldmap = "js/worldmap.js?" . filemtime("js/worldmap.js");
 	$virusText = "js/virusText.js?" . filemtime("js/virusText.js");
 ?>
 
@@ -19,23 +20,23 @@
     <meta name="description" content="사스, 신종플루, 메르스, 신종코로나…무엇이 다를까">
 
     <!-- SNS 공유 태그-->
-    <meta property="og:url" content="http://news.khan.co.kr/kh_storytelling/2020/coronavirus/" />
+    <meta property="og:url" content="http://news.khan.co.kr/kh_storytelling/2020/virus/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="수치로 보는 21세기의 전염병" />
     <meta property="og:description" content="사스, 신종플루, 메르스, 신종코로나…무엇이 다를까" />
-    <meta property="og:image" content="http://img.khan.co.kr/spko/storytelling/2020/coronavirus//fb_thumb.jpg" />
+    <meta property="og:image" content="http://img.khan.co.kr/spko/storytelling/2020/virus/fb_thumb_virus_3.jpg" />
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="http://news.khan.co.kr/kh_storytelling/2020/coronavirus/">
+    <meta name="twitter:url" content="http://news.khan.co.kr/kh_storytelling/2020/virus/">
     <meta name="twitter:creator" content="@kyunghyang">
     <meta name="twitter:title" content="수치로 보는 21세기의 전염병">
     <meta name="twitter:description" content="사스, 신종플루, 메르스, 신종코로나…무엇이 다를까">
-    <meta name="twitter:image" content="http://img.khan.co.kr/spko/storytelling/2020/coronavirus//fb_thumb.jpg">
+    <meta name="twitter:image" content="http://img.khan.co.kr/spko/storytelling/2020/virus/fb_thumb_virus_3.jpg">
 
     <!-- 스타일시트 태그-->
- 	<link rel="stylesheet" type="text/css" href="<?php echo $css; ?>" />
 	<link rel="stylesheet" type="text/css" href="http://img.khan.co.kr/spko/storytelling/recothumb/digiReco.css" />
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"/>
+ 	<link rel="stylesheet" type="text/css" href="<?php echo $css; ?>" />
 
     <!-- 스크립트 태그-->
 	<script type="text/javascript" src="http://www.khan.co.kr/spko/js/plugin/jquery-1.11.3.min.js"></script>
@@ -164,7 +165,7 @@
 						<div class="back-photo-slider">
 							<div class="photo"></div>
 						</div>
-						<div class="front-text"><img src="img/s-header-graphic-text.png" alt="바이러스" class="img-pc"><img src="img/s-header-graphic-text-m.png" alt="바이러스" class="img-m"></div>
+						<div class="front-text"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/s-header-graphic-text.png" alt="바이러스" class="img-pc"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/s-header-graphic-text-m.png" alt="바이러스" class="img-m"></div>
 					</div>
 					<div class="cover-pattern2"></div>
 					<div class="s-header-text">
@@ -175,40 +176,40 @@
 				
 				<div class="s-body">
 					<div class="s-body-wrap">	
-						<div class="back-virus virus-big virus--1"><img src="img/virus-big.png" alt=""></div>
-						<div class="back-virus virus-md virus--2"><img src="img/virus-md.png" alt=""></div>
-						<div class="back-virus virus-md virus--3"><img src="img/virus-md.png" alt=""></div>
-						<div class="back-virus virus-md-sm virus--4"><img src="img/virus-md-sm.png" alt=""></div>
-						<div class="back-virus virus-sm virus--5"><img src="img/virus-sm.png" alt=""></div>
-						<div class="back-virus virus-sm virus--6"><img src="img/virus-sm.png" alt=""></div>
-						<div class="back-virus virus-sm virus--7"><img src="img/virus-sm.png" alt=""></div>
-						<div class="back-virus virus-sm virus--8"><img src="img/virus-sm.png" alt=""></div>
-						<div class="back-virus virus-big virus--9"><img src="img/virus-big.png" alt=""></div>
-						<div class="back-virus virus-md-sm virus--10"><img src="img/virus-md-sm.png" alt=""></div>
-						<div class="back-virus virus-md-sm virus--11"><img src="img/virus-md-sm.png" alt=""></div>
-						<div class="back-virus virus-md-sm virus--12"><img src="img/virus-md-sm.png" alt=""></div>
-						<div class="back-virus virus-md-sm virus--13"><img src="img/virus-md-sm.png" alt=""></div>
-						<div class="back-virus virus-md-sm virus--14"><img src="img/virus-md-sm.png" alt=""></div>
-						<div class="back-virus virus-big virus--1"><img src="img/virus-big.png" alt=""></div>
-						<div class="back-virus virus-md virus--2"><img src="img/virus-md.png" alt=""></div>
-						<div class="back-virus virus-md virus--3"><img src="img/virus-md.png" alt=""></div>
-						<div class="back-virus virus-md-sm virus--4"><img src="img/virus-md-sm.png" alt=""></div>
-						<div class="back-virus virus-sm virus--5"><img src="img/virus-sm.png" alt=""></div>
-						<div class="back-virus virus-sm virus--6"><img src="img/virus-sm.png" alt=""></div>
-						<div class="back-virus virus-sm virus--7"><img src="img/virus-sm.png" alt=""></div>
-						<div class="back-virus virus-sm virus--8"><img src="img/virus-sm.png" alt=""></div>
-						<div class="back-virus virus-big virus--9"><img src="img/virus-big.png" alt=""></div>
-						<div class="back-virus virus-md-sm virus--10"><img src="img/virus-md-sm.png" alt=""></div>
-						<div class="back-virus virus-md-sm virus--11"><img src="img/virus-md-sm.png" alt=""></div>
-						<div class="back-virus virus-md-sm virus--12"><img src="img/virus-md-sm.png" alt=""></div>
-						<div class="back-virus virus-md-sm virus--13"><img src="img/virus-md-sm.png" alt=""></div>
-						<div class="back-virus virus-md-sm virus--14"><img src="img/virus-md-sm.png" alt=""></div>
+						<div class="back-virus virus-big virus--1"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-big.png" alt=""></div>
+						<div class="back-virus virus-md virus--2"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-md.png" alt=""></div>
+						<div class="back-virus virus-md virus--3"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-md.png" alt=""></div>
+						<div class="back-virus virus-md-sm virus--4"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-md-sm.png" alt=""></div>
+						<div class="back-virus virus-sm virus--5"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-sm.png" alt=""></div>
+						<div class="back-virus virus-sm virus--6"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-sm.png" alt=""></div>
+						<div class="back-virus virus-sm virus--7"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-sm.png" alt=""></div>
+						<div class="back-virus virus-sm virus--8"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-sm.png" alt=""></div>
+						<div class="back-virus virus-big virus--9"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-big.png" alt=""></div>
+						<div class="back-virus virus-md-sm virus--10"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-md-sm.png" alt=""></div>
+						<div class="back-virus virus-md-sm virus--11"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-md-sm.png" alt=""></div>
+						<div class="back-virus virus-md-sm virus--12"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-md-sm.png" alt=""></div>
+						<div class="back-virus virus-md-sm virus--13"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-md-sm.png" alt=""></div>
+						<div class="back-virus virus-md-sm virus--14"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-md-sm.png" alt=""></div>
+						<div class="back-virus virus-big virus--1"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-big.png" alt=""></div>
+						<div class="back-virus virus-md virus--2"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-md.png" alt=""></div>
+						<div class="back-virus virus-md virus--3"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-md.png" alt=""></div>
+						<div class="back-virus virus-md-sm virus--4"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-md-sm.png" alt=""></div>
+						<div class="back-virus virus-sm virus--5"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-sm.png" alt=""></div>
+						<div class="back-virus virus-sm virus--6"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-sm.png" alt=""></div>
+						<div class="back-virus virus-sm virus--7"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-sm.png" alt=""></div>
+						<div class="back-virus virus-sm virus--8"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-sm.png" alt=""></div>
+						<div class="back-virus virus-big virus--9"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-big.png" alt=""></div>
+						<div class="back-virus virus-md-sm virus--10"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-md-sm.png" alt=""></div>
+						<div class="back-virus virus-md-sm virus--11"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-md-sm.png" alt=""></div>
+						<div class="back-virus virus-md-sm virus--12"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-md-sm.png" alt=""></div>
+						<div class="back-virus virus-md-sm virus--13"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-md-sm.png" alt=""></div>
+						<div class="back-virus virus-md-sm virus--14"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-md-sm.png" alt=""></div>
 
 						<div class="top-info">
 							<div class="page-title">							
-								<img src="img/page-title-01.png" class="main-title" alt="">
-								<img src="img/page-title-02.png" class="sub-title img-pc" alt="">
-								<img src="img/page-title-02-m.png" class="sub-title img-m" alt="">
+								<img src="http://img.khan.co.kr/spko/storytelling/2020/virus/page-title-01.png" class="main-title" alt="">
+								<img src="http://img.khan.co.kr/spko/storytelling/2020/virus/page-title-02.png" class="sub-title img-pc" alt="">
+								<img src="http://img.khan.co.kr/spko/storytelling/2020/virus/page-title-02-m.png" class="sub-title img-m" alt="">
 							</div>
 								
 							<div class="top-byline">
@@ -236,13 +237,28 @@
 								<div class="map-holder">
 									<div id="map"></div>
 								</div>
+								
 								<div class="data-type-change">
 									<div class="switch-btn-holder">
 										<div class="each-btn on type-case" data-type="cases">확진자 <span class="caseNumber">100명</span></div>
-										<div class="switch-icon"><img src="img/change-w.png" alt=""></div>
+										<div class="switch-icon"><img src="http://img.khan.co.kr/spko/storytelling/2020/virus/change-w.png" alt=""></div>
 										<div class="each-btn type-death" data-type="death">사망자 <span class="deathNumber">100명</span></div>
 									</div>
 								</div>
+								
+								<div class="map-over-graph">
+									<div class="graph-wrap">
+										<h4>국가별 확진자 <span>*괄호안은 사망자</span></h4>
+										<ul class="graph">
+											<li>
+												<em class="country-name">China</em>
+												<div class="pole pole-case"><span class="number">7084</span></div>
+												<div class="pole pole-death"></div>												
+											</li>
+										</ul>
+									</div>
+								</div>
+
 							</div>
 							<p class="map-des">* 좌측 상단의 줌 인, 아웃 버튼을 이용해 지도를 확대, 축소 할 수 있습니다. </p>						
 						</div>
@@ -268,7 +284,7 @@
 													<div class="card-wrap">
 														<div class="back-photo"></div>
 														<div class="person-info">
-															<img src="img/virus-1-name.png" alt="사스">
+															<img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-1-name.png" alt="사스">
 															<div class="info-txt">
 																2002년 발생
 															</div>														
@@ -279,7 +295,7 @@
 													<div class="card-wrap">
 														<div class="back-photo"></div>
 														<div class="person-info">
-															<img src="img/virus-2-name.png" alt="신종플루">
+															<img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-2-name.png" alt="신종플루">
 															<div class="info-txt">
 																2009년 발생
 															</div>															
@@ -290,7 +306,7 @@
 													<div class="card-wrap">
 														<div class="back-photo"></div>
 														<div class="person-info">
-															<img src="img/virus-3-name.png" alt="">
+															<img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-3-name.png" alt="">
 															<div class="info-txt">
 																2012년 발생
 															</div>		
@@ -301,7 +317,7 @@
 													<div class="card-wrap">
 														<div class="back-photo"></div>
 														<div class="person-info">
-															<img src="img/virus-4-name.png" alt="신종플루">
+															<img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-4-name.png" alt="신종플루">
 															<div class="info-txt">
 																2019년 발생
 															</div>		
@@ -512,6 +528,7 @@
     <!-- //전체 wrap (E)-->
 	<script type="text/javascript" src="<?php echo $js; ?>"></script>
 	<script type="text/javascript" src="<?php echo $caseData; ?>"></script>
+	<script type="text/javascript" src="<?php echo $worldmap; ?>"></script>
 	<script type="text/javascript" src="<?php echo $virusText; ?>"></script>
 
 	<!-- imp 2019.04 YJ 추가-->
