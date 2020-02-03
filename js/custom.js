@@ -82,8 +82,9 @@ $(function() {
 
 	});
 
+
 	// (Start) Plots map using leaflet.js
-	var mapZoom = (isMobile == true) ? 1 :2;
+	var mapZoom = (isMobile == true) ? 2 :3;
 	var map = L.map("map").setView([30.782613, 114.366952], mapZoom);
 	/*
 	var mapTile = new L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -94,8 +95,9 @@ $(function() {
 
 	var mapTile = new L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-		minZoom: mapZoom,
+		minZoom: 2,
 		maxZoom: 8,
+		continuousWorld: true
 	});
 
 
@@ -164,22 +166,41 @@ $(function() {
 	var mapVirus; 
 	var mapDataType; 
 	var totalCasesNumber = { "sars": [8042,830],"flu":[6717097, 19654],"mers":[1364, 519],"corona":[7711, 170]};
-	var circlePos = L.layerGroup().addTo(map);		
+	var circlePos = L.layerGroup().addTo(map);
+	var getRadius = function(v){
+		if(v>0 && v<=10){
+			return 0.5; 
+		}else if(v>10&& v<=100){
+			return 2; 
+		}else if(v>100&& v<=1000){
+			return 3.5; 		
+		}else if(v>1000){
+			return 5; 
+		}	
+	};
+	
+
 	function makeCirlces(virus, type){
 		var virus = virus;		
 		var data = caseData.filter( function(v,i,a){
 			return a[i].virus == virus;
+		})
+		data.sort(function(a,b){
+			return a[type] > b[type] ? -1 :a[type] <  b[type] ? 1 : 0;
 		})
 		var totalCases = totalCasesNumber[virus][0];
 		var totalDeath = totalCasesNumber[virus][1];
 
 		var type = (type == "cases")? "cases" : "death";
 		var circleColor = (type == "cases")? "#ff8a00" : "#d10000";
-		
+
+		$(".legend-holder").removeClass("legend-cases legend-death");
+		$(".legend-holder").addClass("legend-"+type);
 		$(".graph-wrap ul").html("");
 
 		for (var i=0; i<data.length; i++) {
-			if( data[i][type] !== 0 ){							
+			if( data[i][type] !== 0 ){
+				/*
 				if(virus=="flu"){
 					var radius = Math.sqrt( data[i][type] ) * 15000 ;
 					if(radius >= 500000){
@@ -187,7 +208,8 @@ $(function() {
 					}
 				}else{
 					var radius = Math.sqrt( data[i][type] ) * 20000;
-				}
+				}*/
+				var radius = (getRadius(data[i][type]))*100000;
 				var circles = new L.circle([data[i].Latitude, data[i].Longitude],{
 					color: circleColor,
 					fillColor: circleColor,
@@ -195,14 +217,23 @@ $(function() {
 					border: 1,
 					className: 'circle circle-'+data[i].nation,
 					idName:i,	
-					weight:2,	
+					weight:1,	
 					radius: radius
 				}).bindPopup('<p class="nation-info">'+data[i].nation+'</p><p class="numb">'+ data[i][type] +'명</p>');
 				circlePos.addLayer(circles);		
 				
-				$(".graph-wrap ul").append("<li><em class='country-name'>"+data[i].nation+"</em><div class='pole pole-case'><span class='number'>"+data[i]["cases"]+"("+data[i]["death"]+")</span></li></div><div class='pole pole-death'></div>");
-				$(".graph-wrap ul li").eq(i).find(".pole-case").css({"width":data[i]["cases"]/10 });
-				$(".graph-wrap ul li").eq(i).find(".pole-death").css({"width":data[i]["death"]/10 });
+				/*
+				if(virus=="flu"){
+					if(i<15){
+						$(".graph-wrap ul").append("<li><em class='country-name'>"+data[i].nation+"</em><div class='pole pole-case'><span class='number'>"+data[i]["cases"]+"("+data[i]["death"]+")</span></li></div><div class='pole pole-death'></div>");
+						$(".graph-wrap ul li").eq(i).find(".pole-case").css({"width": (data[i]["cases"]/2000 >1000)? 1000 : (data[i]["cases"]/2000 <1)? 1: data[i]["cases"]/2000 });
+						$(".graph-wrap ul li").eq(i).find(".pole-death").css({"width":data[i]["death"]/2000 });
+					}
+				}else{
+					$(".graph-wrap ul").append("<li><em class='country-name'>"+data[i].nation+"</em><div class='pole pole-case'><span class='number'>"+data[i]["cases"]+"("+data[i]["death"]+")</span></li></div><div class='pole pole-death'></div>");
+					$(".graph-wrap ul li").eq(i).find(".pole-case").css({"width": (data[i]["cases"]/5 >1000)?1000: (data[i]["cases"]/5 <1)?1:data[i]["cases"]/5});
+					$(".graph-wrap ul li").eq(i).find(".pole-death").css({"width":data[i]["death"]/5 });
+				}*/
 
 			}
 			
@@ -214,6 +245,7 @@ $(function() {
 	function setMapDefault(){
 		mapVirus = "sars";
 		mapDataType ="cases"; 
+		$(".legend-holder").addClass("legend-cases");
 		makeCirlces(mapVirus, mapDataType);
 	}
 	setMapDefault();
@@ -269,11 +301,13 @@ $(function() {
 		$(".card-con-col-2 .card-con-photo").css({"background": cardImgUrl });
 		$(".storytelling-as-numbers > ul").html("");
 		$(".text-section > ul").html("");
+		var tN = 0;
 		for(c=0; c<cardData.length;c++){
 			if(cardData[c].listType == "number"){			
 				$(".storytelling-as-numbers > ul").append("<li><p class='title'>"+cardData[c].title+"</p><p class='conts'>"+cardData[c].conts+"</p></li>");
 			}else if(cardData[c].listType == "text"){
-				$(".text-section > ul").append("<li><p class='title'>"+cardData[c].title+"</p><div class='para-holder'>"+cardData[c].conts+"</div></li>");
+				$(".text-section > ul").append("<li><p class='title'>"+cardData[c].title+"</p><div class='para-holder'>"+cardData[c].conts+"</div><div class='card-photo'><img src='"+imgURL+"card-con-photo-"+virus+"-"+tN+".jpg' alt=''></div></li>");
+				tN++;
 			}				
 		}
 	
@@ -281,12 +315,12 @@ $(function() {
 	v_card.showCardContents = function(){
 		$(".slider-bottom").slideDown( function(){
 			var cardConPos = $(".card-con-header").offset().top-150;
-			$("html, body").animate({scrollTop: cardConPos},1000, "easeOutCubic");
+			$("html, body").animate({scrollTop: cardConPos},800, "easeOutCubic");
 		});		
 	}	
 	v_card.hideCardContents = function(){
 		var cardSliderPos = $(".slider").offset().top-(screenHeight*0.3);
-		$("html, body").animate({scrollTop: cardSliderPos},1000, "easeOutCubic",function(){
+		$("html, body").animate({scrollTop: cardSliderPos},800, "easeOutCubic",function(){
 			$(".slider-bottom").hide();
 		});
 		$card.removeClass("on");
@@ -298,7 +332,7 @@ $(function() {
 		v_card.makeCardContents($(this).attr("data-card-virus"));
 		v_card.showCardContents();
 	});	
-	$(".see-more-btn").on("click", function(e){
+	$(".see-more-btn, .close-btn").on("click", function(e){
 		v_card.hideCardContents();
 	});
 	// Bottom Virus Card (End)
