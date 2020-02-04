@@ -183,7 +183,7 @@ var virusText = [
     "virus": "corona",
     "listType": "number",
     "title": "감염자·사망자 수와 치사율",
-    "conts": "감염 확진자 1만8000명 육박, 사망자 360여명, 치사율 2~5% 추정 <span class='sm'>*자료 중국질병예방통제센터(CCDC), 세계보건기구(WHO)</span>"
+    "conts": "감염 확진자 2만명 육박, 사망자 420여명, 치사율 2~5% 추정 <span class='sm'>*2020.02.04 0시 기준<br/>*자료 중국질병예방통제센터(CCDC), 세계보건기구(WHO)</span>"
   },
   {
     "virus": "corona",

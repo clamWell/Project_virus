@@ -28,32 +28,6 @@ img { border:0; vertical-align:bottom; }
 }
 
 
-/*****IE경고창******/
-.backLayer {background-color:#000;  filter: alpha(opacity = 70); width:100%;height:100%; position: absolute; top: 0px; left: 0px; z-index: 999;}
-.warning_area { margin: 0 auto; width: 100%; height: 100%; }
-.warning {background:#444444; padding:20px;}
-.warning_area h2 { margin-bottom: 15px;}
-.warning_area p { margin-bottom: 30px;}
-.warning_area p,.warning_area h2 { color: #fff; }
-.warning_area p a { color: #fff; text-align: center; font-size: 14px; text-decoration: none; }
-.warning_area p:hover a{color: #ff9320;}
-.closeBtn2 {width: 30px;height: 30px;background-image: url("http://img.khan.co.kr/spko/storytelling/2016/anniversary/close_btn.png");background-size: 30px 30px;background-position: top;cursor: pointer;}
-.warning_area p.keepBtn , .warning_area p.updateBtn{ text-align: center; width: 150px;height: 35px;line-height: 35px;margin: 0px auto;cursor: pointer;display: block;border: 1px solid white; padding: 0px;margin-bottom: 10px;margin-top: 20px;}
-.warning_area .keepBtn:hover , .warning_area p.updateBtn:hover {color: #ff9320;border: 1px solid #ff9320;}
-.ieBox{position:fixed; z-index:1000; width: 500px; height: 250px; top:50%; left: 50%; margin-top: -125px; margin-left: -250px;}
-
-
-
-.ie9 { width: 400px; position: fixed; bottom: 30px; right: 30px; background:#333; box-shadow: 0px 0px 10px #111; box-sizing: border-box; padding:20px;
-z-index:1111; border-radius: 5px; }
-.ie9 p { font-size: 15px; color:#fff; margin-bottom: 10px;text-align: center; }
-.ie9 .goUpdate { width: 280px; margin: 0 auto;  position: relative; top: 0px; text-align: center; color:#fff; 
-cursor: pointer; border-radius: 7px; font-size: 16px;line-height: 28px; font-weight: bold; padding: 13px 0;background: #93b8eb; }
-.ie9 .goUpdate a { color:#111; }
-.ie9 .close { position: absolute; top:10px;right:15px; color:#fff; cursor: pointer; font-size:30px; line-height:20px;}
-
-
-
 /*-------------------------------------*/
 /******** 전체 기본 CSS - PC 기준********/
 /************* 2019.5 YJ *************/
@@ -68,6 +42,38 @@ font-family: 'JejuMyeongjo-Regular', 'notokr-regular', 'Apple SD Gothic Neo','�
 .top_btn_box { display: none; }
 
 body.fixed { height:100vh; overflow-y: hidden; }
+
+/*****IE 블락******/
+.ie-block {  z-index: 99999; width:100%; height:100vh; background:#111; background: rgba(21, 21, 21, 0.9);position:fixed; top:0;left:0;bottom:0;right:0;}
+.ie-block .alert-msg { position: absolute; background:#fff; box-sizing: border-box; padding: 25px; border-radius: 5px; 
+box-shadow: 2px 2px 8px rgba(152, 153, 156, 0.2);width: 50%; left:25%; top: 50%; margin-top:-150px; }
+.ie-block .alert-msg p { margin-bottom:8px;  text-align: center; color: #454750;font-size: 20px; }
+.ie-block .alert-msg button {    display: block; width: 80%; margin: 0px auto;margin-top: 20px;
+box-sizing: border-box;  padding: 10px; background: #ececf1;  border-radius: 4px; color: #565661; font-weight: bold; font-size: 14px; cursor: pointer; border: 1px solid #dedee2; letter-spacing: -0.05em; }
+
+/*****IE경고창******/
+.backLayer {background-color:#000;  filter: alpha(opacity = 70); width:100%;height:100%; position: absolute; top: 0px; left: 0px; z-index: 999;}
+.warning_area { margin: 0 auto; width: 100%; height: 100%; }
+.warning {background:#444444; padding:20px;}
+.warning_area h2 { margin-bottom: 15px;}
+.warning_area p { margin-bottom: 30px;}
+.warning_area p,.warning_area h2 { color: #fff; }
+.warning_area p a { color: #fff; text-align: center; font-size: 14px; text-decoration: none; }
+.warning_area p:hover a{color: #ff9320;}
+.closeBtn2 {width: 30px;height: 30px;background-image: url("http://img.khan.co.kr/spko/storytelling/2016/anniversary/close_btn.png");background-size: 30px 30px;background-position: top;cursor: pointer;}
+.warning_area p.keepBtn , .warning_area p.updateBtn{ text-align: center; width: 150px;height: 35px;line-height: 35px;margin: 0px auto;cursor: pointer;display: block;border: 1px solid white; padding: 0px;margin-bottom: 10px;margin-top: 20px;}
+.warning_area .keepBtn:hover , .warning_area p.updateBtn:hover {color: #ff9320;border: 1px solid #ff9320;}
+.ieBox{position:fixed; z-index:1000; width: 500px; height: 250px; top:50%; left: 50%; margin-top: -125px; margin-left: -250px;}
+
+.ie9 { width: 400px; position: fixed; bottom: 30px; right: 30px; background:#333; box-shadow: 0px 0px 10px #111; box-sizing: border-box; padding:20px;
+z-index:1111; border-radius: 5px; }
+.ie9 p { font-size: 15px; color:#fff; margin-bottom: 10px;text-align: center; }
+.ie9 .goUpdate { width: 280px; margin: 0 auto;  position: relative; top: 0px; text-align: center; color:#fff; 
+cursor: pointer; border-radius: 7px; font-size: 16px;line-height: 28px; font-weight: bold; padding: 13px 0;background: #93b8eb; }
+.ie9 .goUpdate a { color:#111; }
+.ie9 .close { position: absolute; top:10px;right:15px; color:#fff; cursor: pointer; font-size:30px; line-height:20px;}
+
+
 
 /* loading */
 .loading-page { width: 100%; height: 100%; height: 100vh; background: #111; position: fixed; z-index: 100; left: 0px; top: 0px; right:0px; bottom: 0px; overflow:hidden; }
@@ -244,7 +250,7 @@ letter-spacing: 0; text-shadow: 0px 0px 2px #111;}
 .pro-des p { margin: 30px 0; font-size: 26px; line-height: 1.6; letter-spacing: -0.03em; color:#fff; font-weight:400;word-break: break-all; }
 .pro-des p b { display: block; text-align: center; margin-bottom: 25px; 
  font-family: 'Noto Sans KR', 'notokr-regular';}
-
+.pro-des p span { font-weight: bold; display: inline; background: #ca0000; padding: 0px 5px;}
 
 .world-map-area { width:100%; padding: 100px 0; padding-bottom: 20px;  }  
 .world-map-area .map-plots-graph { width: 100%; position: relative; }  
@@ -263,16 +269,16 @@ border: 1px solid rgba(255,255,255,0); margin: 0px 3px; cursor: pointer; font-fa
 
 .data-type-change { position: absolute; bottom: 30px; width: 300px; left:50%; margin-left:-150px;z-index: 999999999;}
 .switch-btn-holder { width: 100%; position: relative; box-sizing: border-box; padding: 0px 15px;text-align: center; }
-.switch-btn-holder .each-btn { transition:all 0.2s ease 0s; display: inline-block; width:100px;  box-sizing: border-box; padding: 8px 15px; background:#fff;
- border: 1px solid #111; color:#111; font-size: 18px;  cursor: pointer; border-radius: 4px;  position: relative; 
- font-family: 'Noto Sans KR', 'notokr-regular'; line-height: 1; }
+.switch-btn-holder .each-btn { transition:all 0.2s ease 0s; display: inline-block; width:100px;  box-sizing: border-box; 
+padding: 8px 15px; background:#d4d4d4; border: 1px solid #111; color:#111; font-size: 18px;  cursor: pointer; border-radius: 4px; 
+position: relative;  font-family: 'Noto Sans KR', 'notokr-regular'; line-height: 1; }
 .switch-btn-holder .each-btn:hover { box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);} 
-.switch-btn-holder .on { background:#111; opacity:1; cursor: default; pointer-events: none; opacity:1; }
+.switch-btn-holder .on { background:#fff; opacity:1; cursor: default; pointer-events: none; opacity:1; }
 .switch-btn-holder .switch-icon {display: inline; display: inline; margin: 0px 10px; vertical-align: middle;}
 .switch-btn-holder .switch-icon img { width: 20px;vertical-align: middle;}
 .switch-btn-holder::after {clear: both; content: ""; display:block; }
 .switch-btn-holder .type-death { color: #ff2d2d;font-weight:bold; }
-.switch-btn-holder .type-case { color: #ff9320; font-weight:bold; }   
+.switch-btn-holder .type-case {  color: #ff8400; font-weight:bold; }   
 .switch-btn-holder .each-btn > span { position:absolute; top: -40px; font-size:26px; line-height:1; 
 font-weight:bold; color:#fff;  text-shadow: 1px 1px 1px rgba(0,0,0,0.8);  width: 140px; left:50%; margin-left: -70px;}
 .map-des { text-align: center; font-size: 14px; color:#fff; margin: 10px auto; opacity: 0.6;}
