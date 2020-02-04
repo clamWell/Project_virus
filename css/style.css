@@ -321,14 +321,23 @@ box-sizing: border-box; padding: 15px; background: rgba(0,0,0,0.7); border-radiu
 .legend-holder ul li .scope { display: inline-block;font-size: 13px; opacity:0.8;color: #fff; }
 
 .table-area { margin: 50px auto; font-family: 'Noto Sans KR', 'notokr-regular';}
-.table-area h3 { text-align: center;  font-size: 20px; color:#fff; margin-bottom: 5px;}
+.table-area h3 { text-align: center;  font-size: 20px; color:#fff; margin-bottom: 5px; line-height: 1;}
 .table-area > .des { text-align: center;  font-size: 15px; color:#fff; opacity:0.5; }
-.table-area .table-holder { max-width: 800px; margin: 0 auto; margin-top: 30px; }
+.table-area .table-holder { max-width: 800px; margin: 0 auto; margin-top: 10px; }
 .table-area .table-holder table {  width: 100%; }
 th.essential, td.essential { display: table-cell;}
 thead th { white-space: nowrap;border-bottom: 1px solid #bbb;  font-size: 15px; padding: 0.5em 1em;  color: #bbb;
  background: rgba(255,255,255,0.1); }
-tbody th, td {border-bottom: 1px solid #e6e6e6; color:#fff; font-size: 14px; text-align: center;padding: 0.5em 1em; }
+tbody th, td { border-bottom: 1px solid rgba(255,255,255,0.2); color:#fff; font-size: 14px; text-align: center;padding: 0.5em 1em; }
+
+.contact-group-legend { max-width: 500px; margin: 20px auto; text-align: center;  }
+.contact-group-legend ul { }
+.contact-group-legend ul li { display: inline; padding: 0px 10px; color:#fff; font-size: 14px; }
+.contact-group-legend ul li span { display: inline-block;  width: 20px; height: 8px; background:#ddd; margin-right: 7px;}
+.contact-group-legend ul li span.fisrtG{ background: rgba(228, 0, 95, 0.5); }
+.contact-group-legend ul li span.secondG { background: rgba(228, 116, 0, 0.5); }
+.contact-group-legend ul li span.thirdG { background: rgba(0, 144, 228, 0.5); }
+.contact-group-legend ul li .arrow { opacity: 0.6; font-size: 12px; padding: 0px 3px;display: inline; }
 
 .personCard { margin: 130px auto; width:100%; }
 .personCard .card-des { max-width: 500px;margin: 0 auto; /* background: rgba(255,255,255,0.1);border-radius: 8px; */}
@@ -562,6 +571,13 @@ animation: blur ease-in-out 7s infinite both;}
 .legend-holder ul li .legend-3 {width: 32px; height: 32px;}
 .legend-holder ul li .scope { font-size: 11px; }
 
+.table-area .table-holder { width: 100%; overflow-x: scroll;}
+.table-area h3 { font-size: 18px; }
+.table-area {  box-sizing: border-box; padding: 0px 10px; }
+.table-area > .des { line-height:1;    font-size: 13px; }
+thead th { font-size: 13px; }
+tbody th, td { font-size: 13px; padding: 5px 2px;  white-space: nowrap;}
+.contact-group-legend ul li { padding: 0px 5px;font-size: 12px;}
 
 .personCard { margin: 100px auto;}
 .personCard .card-des { box-sizing: border-box; padding: 0px 15px; background: none;}
@@ -596,6 +612,7 @@ background: rgba(0,0,0,0.5); border-radius: 0px 10px 10px 0px;margin-top: -30px;
 .each-card-contents-wrap { padding-bottom: 30px; }
 .see-more-btn-holder { margin: 50px auto;box-sizing: border-box;  width: 100%; padding: 0px 20px;}
 .see-more-btn { width: 100%; padding: 25px; font-size: 15px;}
+
 
 .section-article {  width: 100%; box-sizing: border-box; padding: 0 10px;}
 .section-article .section-des { font-size: 20px; }

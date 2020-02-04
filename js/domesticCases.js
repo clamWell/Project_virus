@@ -1,6 +1,7 @@
 var domesticCases = [
   {
     "id": 1,
+    "infectRoute": "1차",
     "sex": "여",
     "age": 35,
     "nation": "중국",
@@ -8,23 +9,25 @@ var domesticCases = [
     "arriveDate": 1.19,
     "confirmDate": "1.20",
     "hospital": "인천의료원",
-    "contact": 45,
+    "contact": "45명",
     "contactCheck": "4명 음성"
   },
   {
     "id": 2,
+    "infectRoute": "1차",
     "sex": "남",
     "age": 55,
     "nation": "한국",
     "wuhan": "O",
     "arriveDate": 1.22,
     "confirmDate": "1.24",
-    "hospital": "국립중앙\n의료원",
-    "contact": 75,
+    "hospital": "국립중앙의료원",
+    "contact": "75명",
     "contactCheck": "7명 음성"
   },
   {
     "id": 3,
+    "infectRoute": "1차",
     "sex": "남",
     "age": 54,
     "nation": "한국",
@@ -32,11 +35,12 @@ var domesticCases = [
     "arriveDate": 1.2,
     "confirmDate": "1.26",
     "hospital": "명지병원",
-    "contact": 98,
+    "contact": "98명",
     "contactCheck": "2명 음성\n1명 양성"
   },
   {
     "id": 4,
+    "infectRoute": "1차",
     "sex": "남",
     "age": 55,
     "nation": "한국",
@@ -44,11 +48,12 @@ var domesticCases = [
     "arriveDate": 1.2,
     "confirmDate": "1.27",
     "hospital": "분당서울대병원",
-    "contact": 172,
+    "contact": "172명",
     "contactCheck": "2명 음성"
   },
   {
     "id": 5,
+    "infectRoute": "1차",
     "sex": "남",
     "age": 33,
     "nation": "한국",
@@ -56,11 +61,12 @@ var domesticCases = [
     "arriveDate": 1.24,
     "confirmDate": "1.3",
     "hospital": "서울의료원",
-    "contact": 33,
+    "contact": "33명",
     "contactCheck": "1명 양성"
   },
   {
     "id": 6,
+    "infectRoute": "2차",
     "sex": "남",
     "age": 55,
     "nation": "한국",
@@ -68,11 +74,12 @@ var domesticCases = [
     "arriveDate": "-",
     "confirmDate": "1.3",
     "hospital": "서울대병원",
-    "contact": 25,
+    "contact": "25명",
     "contactCheck": "2명 양성"
   },
   {
     "id": 7,
+    "infectRoute": "1차",
     "sex": "남",
     "age": 28,
     "nation": "한국",
@@ -80,11 +87,12 @@ var domesticCases = [
     "arriveDate": 1.23,
     "confirmDate": "1.31",
     "hospital": "서울의료원",
-    "contact": 21,
+    "contact": "21명",
     "contactCheck": "-"
   },
   {
     "id": 8,
+    "infectRoute": "1차",
     "sex": "여",
     "age": 62,
     "nation": "한국",
@@ -92,11 +100,12 @@ var domesticCases = [
     "arriveDate": 1.23,
     "confirmDate": "1.31",
     "hospital": "원광대병원",
-    "contact": 72,
+    "contact": "72명",
     "contactCheck": "2명 음성\n1명 검사중"
   },
   {
     "id": 9,
+    "infectRoute": "2차",
     "sex": "여",
     "age": 28,
     "nation": "한국",
@@ -104,11 +113,12 @@ var domesticCases = [
     "arriveDate": "-",
     "confirmDate": "1.31",
     "hospital": "서울의료원",
-    "contact": 2,
+    "contact": "2명",
     "contactCheck": "-"
   },
   {
     "id": 10,
+    "infectRoute": "3차",
     "sex": "여",
     "age": 54,
     "nation": "한국",
@@ -116,11 +126,12 @@ var domesticCases = [
     "arriveDate": "-",
     "confirmDate": "1.31",
     "hospital": "서울대병원",
-    "contact": 2,
+    "contact": "2명",
     "contactCheck": "-"
   },
   {
     "id": 11,
+    "infectRoute": "3차",
     "sex": "남",
     "age": 25,
     "nation": "한국",
@@ -133,6 +144,7 @@ var domesticCases = [
   },
   {
     "id": 12,
+    "infectRoute": "1차",
     "sex": "남",
     "age": 48,
     "nation": "중국",
@@ -140,11 +152,12 @@ var domesticCases = [
     "arriveDate": 1.19,
     "confirmDate": "2.1",
     "hospital": "분당서울대병원",
-    "contact": 138,
+    "contact": "138명",
     "contactCheck": "1명 양성\n1명 검사중"
   },
   {
     "id": 13,
+    "infectRoute": "1차",
     "sex": "남",
     "age": 28,
     "nation": "한국",
@@ -157,6 +170,7 @@ var domesticCases = [
   },
   {
     "id": 14,
+    "infectRoute": "2차",
     "sex": "여",
     "age": 40,
     "nation": "중국",
@@ -169,6 +183,7 @@ var domesticCases = [
   },
   {
     "id": 15,
+    "infectRoute": "1차",
     "sex": "남",
     "age": 43,
     "nation": "한국",
@@ -179,4 +194,4 @@ var domesticCases = [
     "contact": "조사중",
     "contactCheck": "-"
   }
-]
+];

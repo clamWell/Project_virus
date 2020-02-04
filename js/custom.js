@@ -256,16 +256,29 @@ $(function() {
 	});
 	// (End) Plots map using leaflet.js
 
-	// make table
+
+	// make table (Start)
 	v_table = {};
 	v_table.makeTable = function(){
-		for(d=0;d<domesticCases.length;d++){
-			$("tbody").html("");
-			$("tbody").append("<tr><td headers='co-0' class='persist essential'>+d+</th><td headers='co-1' class='essential'>+domesticCases[d].sex+(+domesticCases[d].age+)</td><td headers='co-2' class='essential'>+domesticCases[d].nation+</td><td headers='co-3' class='optional'>+domesticCases[d].wuhan+</td><td headers='co-4' class='optional'>+domesticCases[d].arriveDate+</td><td headers='co-5' class='essential'>+domesticCases[d].confirmDate+</td><td headers='co-6'><td headers='co-7' class='essential'>+domesticCases[d].contact+</td></tr>");
+		$("tbody").html("");
+		for(d=0;d<domesticCases.length;d++){			
+			$("tbody").append("<tr><td headers='co-0' class='persist essential'>"+(d+1)+"번</th><td headers='co-1' class='optional'>"+domesticCases[d].infectRoute+"</td><td headers='co-2' class='essential'>"+domesticCases[d].sex+"("+domesticCases[d].age+")</td><td headers='co-3' class='essential'>"+domesticCases[d].nation+"</td><td headers='co-4' class='optional'>"+domesticCases[d].wuhan+"</td><td headers='co-5' class='optional'>"+domesticCases[d].arriveDate+"</td><td headers='co-6' class='essential'>"+domesticCases[d].confirmDate+"</td><td headers='co-7'>"+domesticCases[d].hospital+"</td><td headers='co-8' class='essential'>"+domesticCases[d].contact+"</td></tr>");
+		}
+		this.colorTable(); 
+	};
+	v_table.colorTable = function(){
+		var contactGroup = [[3,6,10,11], [5,9], [12,14]];
+		var contactGroupColor = ["rgba(228, 0, 95, 0.3)", "rgba(228, 116, 0, 0.3)", "rgba(0, 144, 228, 0.3)"]; 
+		var $TR = $("#koreaCases tr");
+		for(c=0; c<contactGroup.length;c++){			
+			for(d=0; d<contactGroup[c].length;d++){
+				$TR.eq(contactGroup[c][d]).css({"background": contactGroupColor[c]});
+			}
 		}
 	};
-	$(".table-area").hide();
-	//v_table.makeTable();
+	//$(".table-area").hide();
+	v_table.makeTable();
+	// make table (End)
 
 	// Bottom Virus Card (Start)
 	var v_card = {},
