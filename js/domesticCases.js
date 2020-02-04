@@ -193,5 +193,18 @@ var domesticCases = [
     "hospital": "국군수도병원",
     "contact": "조사중",
     "contactCheck": "-"
+  },
+  {
+    "id": 16,
+    "infectRoute": "1차",
+    "sex": "여",
+    "age": 42,
+    "nation": "한국",
+    "wuhan": "X",
+    "arriveDate": 1.19,
+    "confirmDate": "2.4",
+    "hospital": "확인중",
+    "contact": "확인중",
+    "contactCheck": "-"
   }
 ];

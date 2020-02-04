@@ -82,25 +82,33 @@ $(function() {
 
 	});
 
+	// (Start) get corona cases data
+	var coronaNowCases=0;
+	var coronaNowDeath=0;
+	function getCoronaStatus(){
+		var c_Data = caseData.filter( function(v,i,a){
+			return a[i].virus == "corona";
+		});
+
+		for(c=0;c<c_Data.length;c++){
+			coronaNowCases = coronaNowCases + c_Data[c].cases;
+			coronaNowDeath = coronaNowDeath + c_Data[c].death;
+		}
+		console.log( coronaNowCases, coronaNowDeath );
+		$("span.coronaNowCases").html(coronaNowCases);
+		$("span.coronaNowDeath").html(coronaNowDeath);
+	}
+	// (end) Get corona cases data
 
 	// (Start) Plots map using leaflet.js
 	var mapZoom = (isMobile == true) ? 2 :4;
 	var map = L.map("map").setView([30.782613, 114.366952], mapZoom);
-	/*
-	var mapTile = new L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-		minZoom: 3,
-		maxZoom: 5,
-	});*/
-
 	var mapTile = new L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 		minZoom: 2,
 		maxZoom: 8,
 		continuousWorld: true
 	});
-
-
 	map.addLayer(mapTile);
 	map.scrollWheelZoom.disable();
 
@@ -115,13 +123,14 @@ $(function() {
 	};
 	info.addTo(map);
 
-	var totalCases;
-	var totalDeath;
-	var mapVirus;
-	var mapDataType;
-	var totalCasesNumber = { "sars": [8042,830],"flu":[6717097, 19654],"mers":[1329, 525],"corona":[20626, 426]};
-	var circlePos = L.layerGroup().addTo(map);
-	var getRadius = function(v){
+	var sprCircle = {};
+	sprCircle.totalCases,
+	sprCircle.totalDeath,
+	sprCircle.mapVirus,
+	sprCircle.mapDataType,
+	sprCircle.totalCasesNumber = { "sars": [8042,830],"flu":[1632258, 19633],"mers":[1329, 525],"corona":[20626, 426]},
+	sprCircle.circlePos = L.layerGroup().addTo(map),
+	sprCircle.GetRadius = function(v){
 		if(v>0 && v<=10){
 			return 0.5;
 		}else if(v>10&& v<=100){
@@ -131,10 +140,8 @@ $(function() {
 		}else if(v>1000){
 			return 5;
 		}
-	};
-
-
-	function makeCirlces(virus, type){
+	},
+	sprCircle.makeCirlces = function(virus, type){
 		var virus = virus;
 		var data = caseData.filter( function(v,i,a){
 			return a[i].virus == virus;
@@ -152,7 +159,8 @@ $(function() {
 
 		for (var i=0; i<data.length; i++) {
 			if( data[i][type] !== 0 ){
-				var radius = (getRadius(data[i][type]))*100000;
+				var radius = (this.GetRadius(data[i][type]))*100000;
+				var popUpMsg = (virus=="flu" && data[i].estimation ==true)? ('<p class="nation-info">'+data[i].nationK+'</p><p class="numb">'+ data[i][type] +'명<em>(추정치)</em></p>') : ('<p class="nation-info">'+data[i].nationK+'</p><p class="numb">'+ data[i][type] +'명</p>')
 				var circles = new L.circle([data[i].Latitude, data[i].Longitude],{
 					color: circleColor,
 					fillColor: circleColor,
@@ -162,66 +170,35 @@ $(function() {
 					idName:i,
 					weight:1,
 					radius: radius
-				}).bindPopup('<p class="nation-info">'+data[i].nationK+'</p><p class="numb">'+ data[i][type] +'명</p>');
-				circlePos.addLayer(circles);
-
-				/*
-				if(virus=="flu"){
-					if(i<15){
-						$(".graph-wrap ul").append("<li><em class='country-name'>"+data[i].nationK+"</em><div class='pole pole-case'><span class='number'>"+data[i]["cases"]+"("+data[i]["death"]+")</span></li></div><div class='pole pole-death'></div>");
-						$(".graph-wrap ul li").eq(i).find(".pole-case").css({"width": (data[i]["cases"]/2000 >1000)? 1000 : (data[i]["cases"]/2000 <1)? 1: data[i]["cases"]/2000 });
-						$(".graph-wrap ul li").eq(i).find(".pole-death").css({"width":data[i]["death"]/2000 });
-					}
-				}else{
-					$(".graph-wrap ul").append("<li><em class='country-name'>"+data[i].nationK+"</em><div class='pole pole-case'><span class='number'>"+data[i]["cases"]+"("+data[i]["death"]+")</span></li></div><div class='pole pole-death'></div>");
-					$(".graph-wrap ul li").eq(i).find(".pole-case").css({"width": (data[i]["cases"]/5 >1000)?1000: (data[i]["cases"]/5 <1)?1:data[i]["cases"]/5});
-					$(".graph-wrap ul li").eq(i).find(".pole-death").css({"width":data[i]["death"]/5 });
-				}*/
-
+				}).bindPopup(popUpMsg);
+				this.circlePos.addLayer(circles);
 
 			}
 
 		}
 
 		if( virus == "corona" ){
-			totalCases = coronaNowCases;
-			totalDeath = coronaNowDeath;
+			this.totalCases = coronaNowCases;
+			this.totalDeath = coronaNowDeath;
 		}else{
-			totalCases = totalCasesNumber[virus][0];
-			totalDeath = totalCasesNumber[virus][1];
+			this.totalCases = this.totalCasesNumber[virus][0];
+			this.totalDeath = this.totalCasesNumber[virus][1];
 		}
-		$(".caseNumber").html(totalCases+"명");
-		$(".deathNumber").html(totalDeath+"명");
-	}
+		$(".caseNumber").html(this.totalCases+"명");
+		$(".deathNumber").html(this.totalDeath+"명");
+	},
+	sprCircle.removeMapCircles = function(){
+		$(".circle").fadeOut();
+	}; 
 
-	var coronaNowCases=0;
-	var coronaNowDeath=0;
-	function getCoronaStatus(){
-		var c_Data = caseData.filter( function(v,i,a){
-			return a[i].virus == "corona";
-		});
-
-		for(c=0;c<c_Data.length;c++){
-			coronaNowCases = coronaNowCases + c_Data[c].cases;
-			coronaNowDeath = coronaNowDeath + c_Data[c].death;
-		}
-		console.log( coronaNowCases, coronaNowDeath );
-		$("span.coronaNowCases").html(coronaNowCases);
-		$("span.coronaNowDeath").html(coronaNowDeath);
-	}
-
-	function setMapDefault(){
+	sprCircle.setMapDefault = function(){
 		getCoronaStatus();
 		mapVirus = "sars";
 		mapDataType ="cases";
 		$(".legend-holder").addClass("legend-cases");
-		makeCirlces(mapVirus, mapDataType);
+		sprCircle.makeCirlces(mapVirus, mapDataType);
 	}
-	setMapDefault();
-
-	function removeMapCircles(){
-		$(".circle").fadeOut();
-	}
+	sprCircle.setMapDefault();
 
 	function circlesOn(e) {
 		var layer = e.target;
@@ -240,8 +217,8 @@ $(function() {
 		mapVirus = $(this).attr("data-virus");
 		mapDataType = "cases";
 
-		removeMapCircles();
-		makeCirlces(mapVirus, mapDataType);
+		sprCircle.removeMapCircles();
+		sprCircle.makeCirlces(mapVirus, mapDataType);
 		map.closePopup();
 	});
 
@@ -250,14 +227,14 @@ $(function() {
 		$(this).addClass("on");
 		mapDataType = $(this).attr("data-type");
 
-		removeMapCircles();
-		makeCirlces(mapVirus, mapDataType);
+		sprCircle.removeMapCircles();
+		sprCircle.makeCirlces(mapVirus, mapDataType);
 		map.closePopup();
 	});
 	// (End) Plots map using leaflet.js
 
 
-	// make table (Start)
+	// make table(Start)
 	v_table = {};
 	v_table.makeTable = function(){
 		$("tbody").html("");

@@ -2534,7 +2534,7 @@ var caseData = [
     "nation": "South Korea",
     "Latitude": 35.907757,
     "Longitude": 127.766922,
-    "cases": 15,
+    "cases": 16,
     "death": 0,
     "estimation": false,
     "nationK": "한국"
