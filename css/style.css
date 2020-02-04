@@ -176,7 +176,7 @@ width: 27px; height: 30px;}
 	50%{-webkit-transform:translateY(-15px); transform:translateY(0)}to{-webkit-transform:translateY(-15px);transform:translateY(-15px)}	
 }
 
-.s-header {  position: relative; width:100%; box-sizing: border-box; height: 650px; overflow: hidden; background: #111;}
+.s-header {  position: relative; width:100%; box-sizing: border-box; height: 600px; overflow: hidden; background: #111;}
 .s-header .s-header-graphic { width: 100%; height: 100%;}
 .s-header .s-header-graphic .back-photo-slider {width: 100%; height: 100%; position: relative;}
 .s-header .s-header-graphic .back-photo-slider .photo { animation: blur ease-in-out 10s infinite both; 
@@ -251,7 +251,7 @@ letter-spacing: 0; text-shadow: 0px 0px 2px #111;}
 .world-map-area .map-plots-graph .map-holder { height: 700px; width:100%; 
 box-sizing: border-box; border-top: 5px solid #9f0000; border-bottom: 5px solid #9f0000;} 
 .world-map-area .map-plots-graph .map-holder #map {  background: #262626; width: 100%; height: 100%; } 
-.virus-type-change { margin: 30px auto; }
+.virus-type-change { margin: 30px auto;margin-bottom: 15px; }
 .virus-type-change ul { text-align: center; }
 .virus-type-change ul li {transition:all 0.3s ease 0s;  display: inline; box-sizing: border-box; padding: 5px 15px; background: rgba(255,255,255,0.1);
 font-size: 16px; color:#fff; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); text-align:center; border-radius: 4px;
@@ -259,17 +259,20 @@ border: 1px solid rgba(255,255,255,0); margin: 0px 3px; cursor: pointer; font-fa
 .virus-type-change ul li:hover {  background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.5);  }
 .virus-type-change ul li.on {  background: rgba(255,255,255,0.15); border: 1px solid rgba(255, 0, 0, 0.5); box-shadow: 2px 2px 10px rgba(230, 0, 0, 0.5);} 
 
+.updateDate { font-family: 'Noto Sans KR', 'notokr-regular';  text-align: center;font-size: 14px;color: #fff; margin: 10px auto;  opacity: 0.6;}
+
 .data-type-change { position: absolute; bottom: 30px; width: 300px; left:50%; margin-left:-150px;z-index: 999999999;}
 .switch-btn-holder { width: 100%; position: relative; box-sizing: border-box; padding: 0px 15px;text-align: center; }
 .switch-btn-holder .each-btn { transition:all 0.2s ease 0s; display: inline-block; width:100px;  box-sizing: border-box; padding: 8px 15px; background:#fff;
  border: 1px solid #111; color:#111; font-size: 18px;  cursor: pointer; border-radius: 4px;  position: relative; 
  font-family: 'Noto Sans KR', 'notokr-regular'; line-height: 1; }
 .switch-btn-holder .each-btn:hover { box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);} 
-.switch-btn-holder .on { background:#111; opacity:1;  color:#fff; cursor: default; pointer-events: none;  }
+.switch-btn-holder .on { background:#111; opacity:1; cursor: default; pointer-events: none; opacity:1; }
 .switch-btn-holder .switch-icon {display: inline; display: inline; margin: 0px 10px; vertical-align: middle;}
 .switch-btn-holder .switch-icon img { width: 20px;vertical-align: middle;}
 .switch-btn-holder::after {clear: both; content: ""; display:block; }
 .switch-btn-holder .type-death { color: #ff2d2d;font-weight:bold; }
+.switch-btn-holder .type-case { color: #ff9320; font-weight:bold; }   
 .switch-btn-holder .each-btn > span { position:absolute; top: -40px; font-size:26px; line-height:1; 
 font-weight:bold; color:#fff;  text-shadow: 1px 1px 1px rgba(0,0,0,0.8);  width: 140px; left:50%; margin-left: -70px;}
 .map-des { text-align: center; font-size: 14px; color:#fff; margin: 10px auto; opacity: 0.6;}
@@ -311,6 +314,15 @@ box-sizing: border-box; padding: 15px; background: rgba(0,0,0,0.7); border-radiu
 .legend-holder ul li .legend-3 {width: 52px; height: 52px;}
 .legend-holder ul li .scope { display: inline-block;font-size: 13px; opacity:0.8;color: #fff; }
 
+.table-area { margin: 50px auto; font-family: 'Noto Sans KR', 'notokr-regular';}
+.table-area h3 { text-align: center;  font-size: 20px; color:#fff; margin-bottom: 5px;}
+.table-area > .des { text-align: center;  font-size: 15px; color:#fff; opacity:0.5; }
+.table-area .table-holder { max-width: 800px; margin: 0 auto; margin-top: 30px; }
+.table-area .table-holder table {  width: 100%; }
+th.essential, td.essential { display: table-cell;}
+thead th { white-space: nowrap;border-bottom: 1px solid #bbb;  font-size: 15px; padding: 0.5em 1em;  color: #bbb;
+ background: rgba(255,255,255,0.1); }
+tbody th, td {border-bottom: 1px solid #e6e6e6; color:#fff; font-size: 14px; text-align: center;padding: 0.5em 1em; }
 
 .personCard { margin: 130px auto; width:100%; }
 .personCard .card-des { max-width: 500px;margin: 0 auto; /* background: rgba(255,255,255,0.1);border-radius: 8px; */}

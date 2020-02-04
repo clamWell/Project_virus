@@ -165,7 +165,7 @@ $(function() {
 	var totalDeath;
 	var mapVirus; 
 	var mapDataType; 
-	var totalCasesNumber = { "sars": [8042,830],"flu":[6717097, 19654],"mers":[1364, 519],"corona":[7711, 170]};
+	var totalCasesNumber = { "sars": [8042,830],"flu":[6717097, 19654],"mers":[1364, 519],"corona":[17378, 362]};
 	var circlePos = L.layerGroup().addTo(map);
 	var getRadius = function(v){
 		if(v>0 && v<=10){
@@ -286,7 +286,17 @@ $(function() {
 		map.closePopup();
 	});
 	// (End) Plots map using leaflet.js
-
+	
+	// make table
+	v_table = {};
+	v_table.makeTable = function(){
+		for(d=0;d<domesticCases.length;d++){
+			$("tbody").html("");
+			$("tbody").append("<tr><td headers='co-0' class='persist essential'>+d+</th><td headers='co-1' class='essential'>+domesticCases[d].sex+(+domesticCases[d].age+)</td><td headers='co-2' class='essential'>+domesticCases[d].nation+</td><td headers='co-3' class='optional'>+domesticCases[d].wuhan+</td><td headers='co-4' class='optional'>+domesticCases[d].arriveDate+</td><td headers='co-5' class='essential'>+domesticCases[d].confirmDate+</td><td headers='co-6'><td headers='co-7' class='essential'>+domesticCases[d].contact+</td></tr>");															
+		}
+	};
+	$(".table-area").hide();
+	//v_table.makeTable();
 
 	// Bottom Virus Card (Start)
 	var v_card = {},
