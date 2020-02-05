@@ -12,6 +12,41 @@ $(function() {
 		return Math.floor((Math.random() * (n2 - n1 + 1)) + n1);
 	};
 
+	var updateEx = /\(\d\.\d.*?\)/g,
+		confirmNumEx = /\d(\d|,)*명(\(사망[ ]*\d*\)|)/;
+
+	var upDate = "";
+	var koreaData = {confirm: 0, exam: 0, end: 0, ing: 0};
+
+	$.ajax({
+		url: "dataload.php",
+		success: function(data){
+
+			if (data.indexOf("중국") != -1){
+
+				var upDate = updateEx.exec(data)[0].replace("(", "").replace(")", "").replace("일", "");
+				koreaData.confirm = confirmNumEx.exec(data.substring(data.indexOf("확진환자"), data.length))[0].replace("명", "").trim();
+				koreaData.exam = data.indexOf("조사대상") != -1 ? confirmNumEx.exec(data.substring(data.indexOf("조사대상"), data.length))[0].replace("명", "").trim() : "-";
+				koreaData.end = data.indexOf("격리해제") != -1 ? confirmNumEx.exec(data.substring(data.indexOf("격리해제"), data.length))[0].replace("명", "").trim() : "-";
+				koreaData.ing = data.indexOf("검사") != -1 ? confirmNumEx.exec(data.substring(data.indexOf("검사"), data.length))[0].replace("명", "").trim() : "-";
+				for (var i = 0; i < caseData.length; i++){
+					if (caseData[i].virus == "corona"){
+						var temp = confirmNumEx.exec(data.substring(data.indexOf(caseData[i].nationK), data.length))[0].split("(");
+						caseData[i].cases = Number(temp[0].replace("명", "").replace(",", "").trim());
+						caseData[i].death = temp.length > 1 && temp[1].indexOf("사망") != -1 ? Number(temp[1].replace("사망", "").replace("명", "").replace(")", "").trim()) : 0;
+					}
+
+				}
+
+				$(".updateDate").html("* 신종코로나는 2020." + upDate);
+
+
+			}
+
+		}
+	});
+
+
 	//randomly Spreading Virus
     var $virus= $(".back-virus");
 	for (var i = 0; i < $virus.length; i++) {
@@ -189,7 +224,7 @@ $(function() {
 	},
 	sprCircle.removeMapCircles = function(){
 		$(".circle").fadeOut();
-	}; 
+	};
 
 	sprCircle.setMapDefault = function(){
 		getCoronaStatus();
@@ -238,16 +273,16 @@ $(function() {
 	v_table = {};
 	v_table.makeTable = function(){
 		$("tbody").html("");
-		for(d=0;d<domesticCases.length;d++){			
+		for(d=0;d<domesticCases.length;d++){
 			$("tbody").append("<tr><td headers='co-0' class='persist essential'>"+(d+1)+"번</th><td headers='co-1' class='optional'>"+domesticCases[d].infectRoute+"</td><td headers='co-2' class='essential'>"+domesticCases[d].sex+"("+domesticCases[d].age+")</td><td headers='co-3' class='essential'>"+domesticCases[d].nation+"</td><td headers='co-4' class='optional'>"+domesticCases[d].wuhan+"</td><td headers='co-5' class='optional'>"+domesticCases[d].arriveDate+"</td><td headers='co-6' class='essential'>"+domesticCases[d].confirmDate+"</td><td headers='co-7'>"+domesticCases[d].hospital+"</td><td headers='co-8' class='essential'>"+domesticCases[d].contact+"</td></tr>");
 		}
-		this.colorTable(); 
+		this.colorTable();
 	};
 	v_table.colorTable = function(){
 		var contactGroup = [[3,6,10,11], [5,9], [12,14]];
-		var contactGroupColor = ["rgba(228, 0, 95, 0.3)", "rgba(228, 116, 0, 0.3)", "rgba(0, 144, 228, 0.3)"]; 
+		var contactGroupColor = ["rgba(228, 0, 95, 0.3)", "rgba(228, 116, 0, 0.3)", "rgba(0, 144, 228, 0.3)"];
 		var $TR = $("#koreaCases tr");
-		for(c=0; c<contactGroup.length;c++){			
+		for(c=0; c<contactGroup.length;c++){
 			for(d=0; d<contactGroup[c].length;d++){
 				$TR.eq(contactGroup[c][d]).css({"background": contactGroupColor[c]});
 			}
