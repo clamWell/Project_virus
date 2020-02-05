@@ -2404,7 +2404,7 @@ var caseData = [
     "nation": "Australia",
     "Latitude": -25.274398,
     "Longitude": 133.775136,
-    "cases": 12,
+    "cases": 13,
     "death": 0,
     "estimation": false,
     "nationK": "호주"
@@ -2454,7 +2454,7 @@ var caseData = [
     "nation": "Germany",
     "Latitude": 51.165691,
     "Longitude": 10.451526,
-    "cases": 12,
+    "cases": 10,
     "death": 0,
     "estimation": false,
     "nationK": "독일"
@@ -2465,7 +2465,7 @@ var caseData = [
     "Latitude": 22.3193039,
     "Longitude": 114.1693611,
     "cases": 15,
-    "death": 0,
+    "death": 1,
     "estimation": false,
     "nationK": "홍콩"
   },
@@ -2474,7 +2474,7 @@ var caseData = [
     "nation": "Japan",
     "Latitude": 36.204824,
     "Longitude": 138.252924,
-    "cases": 20,
+    "cases": 19,
     "death": 0,
     "estimation": false,
     "nationK": "일본"
@@ -2484,7 +2484,7 @@ var caseData = [
     "nation": "Macau",
     "Latitude": 22.198745,
     "Longitude": 113.543873,
-    "cases": 8,
+    "cases": 10,
     "death": 0,
     "estimation": false,
     "nationK": "마카오"
@@ -2494,8 +2494,8 @@ var caseData = [
     "nation": "China",
     "Latitude": 35.86166,
     "Longitude": 104.195397,
-    "cases": 20438,
-    "death": 425,
+    "cases": 24324,
+    "death": 490,
     "estimation": false,
     "nationK": "중국"
   },
@@ -2504,7 +2504,7 @@ var caseData = [
     "nation": "Malaysia",
     "Latitude": 4.210484,
     "Longitude": 101.975766,
-    "cases": 8,
+    "cases": 10,
     "death": 0,
     "estimation": false,
     "nationK": "말레이시아"
@@ -2524,7 +2524,7 @@ var caseData = [
     "nation": "Singapore",
     "Latitude": 1.352083,
     "Longitude": 103.819836,
-    "cases": 18,
+    "cases": 22,
     "death": 0,
     "estimation": false,
     "nationK": "싱가포르"
@@ -2534,7 +2534,7 @@ var caseData = [
     "nation": "South Korea",
     "Latitude": 35.907757,
     "Longitude": 127.766922,
-    "cases": 16,
+    "cases": 18,
     "death": 0,
     "estimation": false,
     "nationK": "한국"
@@ -2554,7 +2554,7 @@ var caseData = [
     "nation": "Taiwan",
     "Latitude": 23.69781,
     "Longitude": 120.960515,
-    "cases": 10,
+    "cases": 11,
     "death": 0,
     "estimation": false,
     "nationK": "대만"
@@ -2594,7 +2594,7 @@ var caseData = [
     "nation": "Vietnam",
     "Latitude": 14.058324,
     "Longitude": 108.277199,
-    "cases": 8,
+    "cases": 10,
     "death": 0,
     "estimation": false,
     "nationK": "베트남"

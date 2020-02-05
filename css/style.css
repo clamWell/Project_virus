@@ -416,6 +416,9 @@ font-family: 'Noto Sans KR', 'notokr-regular';}
 .text-section ul li p.title {  border-left: 3px solid #111; padding-left: 15px; font-weight: bold;max-width: 700px; margin: 10px auto; line-height: 1;font-family: 'Noto Sans KR', 'notokr-regular';}
 .text-section ul li p.conts { text-indent: 8px; margin: 15px 0; }
 .text-section ul li p.conts .sm { display: block; opacity:0.7; font-size: 16px; }
+.text-section ul li p.conts .inlink {color:#111; background: rgba(255, 213, 137, 0.2); border-bottom: 2px dotted #ff9320; font-weight: bold; }
+.text-section ul li p.conts .inlink:hover {border-bottom: 2px solid #ff9320; }
+.text-section ul li p.conts .inlink::after {font-family: 'Noto Sans KR', 'notokr-regular';content:"관련기사로 이동"; display: inline;font-size: 12px;opacity: 0.6; padding: 0px 4px; }
 .para-holder {margin: 0px auto; max-width: 700px; }
 .card-photo {  margin: 50px auto; width: 100%;} 
 .card-photo img { width: 100%; }
@@ -444,9 +447,15 @@ color:#fff;color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.4)
 
 .rel-article-area h4 { text-align: center; font-size: 20px;font-weight: 300;color: #fff; opacity: 0.7;}
 .rel-article-area { margin: 100px auto;  font-family: 'Noto Sans KR', 'notokr-regular'; }
+
+.go-timeline { padding: 0; margin: 30px auto; max-width: 700px; background: rgba(255,255,255,0.1); 
+background: url("http://img.khan.co.kr/spko/storytelling/2020/virus/btn-bg.jpg") no-repeat; border-radius: 3px;}
+.go-timeline a { width: 100%; height:100%; display:block; } 
+.go-timeline p { width:100%; box-sizing: border-box; padding:40px 15px; text-align: center; color:#fff;  font-size: 20px; font-weight: bold;opacity: 0.8; text-shadow: 1px 1px 1px #111;}
+
 .rel-art-title { text-align: center; margin-bottom: 15px; font-size: 20px; color: #777777;font-weight: 500;    text-shadow: 1px 1px 0px rgba(255,255,255,0.8);}
-.rel-article {padding: 0; margin: 20px auto; max-width: 600px; }
-.art-box { transition:all 0.3s ease 0s; width: 100%; background:#fff;  border-bottom: 4px solid #850000; cursor: pointer; }
+.rel-article {padding: 0; margin: 20px auto; max-width: 700px; }
+.art-box { transition:all 0.3s ease 0s; width: 100%; background:#fff;  cursor: pointer; }
 .art-box:hover { box-shadow: 2px 2px 8px rgba(95, 0, 0, 0.2); }
 .art-box .thumb { width: 100%; height: auto;  max-height: 300px;overflow: hidden;}
 .art-box .thumb img { width: 100%;  position: relative;  }
@@ -620,7 +629,8 @@ background: rgba(0,0,0,0.5); border-radius: 0px 10px 10px 0px;margin-top: -30px;
 .section-article ul li {padding: 20px 15px;font-size: 18px; margin: 25px 0;}
 .section-article ul li h4 { font-size: 20px; text-align: center; color: #414758; }
 .section-article ul li.history p b { display: block;}
-
+.go-timeline { border-radius: 5px;margin: 20px auto;}
+.go-timeline p { padding: 25px 5px;font-size: 16px;}
 .rel-article-area h4 { font-size: 16px; }
 .rel-article-area { box-sizing: border-box; padding: 0px 15px; margin: 50px 0; }
 .art-box { border-radius: 5px; border-bottom:0; }
