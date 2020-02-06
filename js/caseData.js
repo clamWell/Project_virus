@@ -2424,7 +2424,7 @@ var caseData = [
     "nation": "Canada",
     "Latitude": 56.130366,
     "Longitude": -106.346771,
-    "cases": 4,
+    "cases": 5,
     "death": 0,
     "estimation": false,
     "nationK": "캐나다"
@@ -2464,7 +2464,7 @@ var caseData = [
     "nation": "Hong Kong",
     "Latitude": 22.3193039,
     "Longitude": 114.1693611,
-    "cases": 15,
+    "cases": 21,
     "death": 1,
     "estimation": false,
     "nationK": "홍콩"
@@ -2474,7 +2474,7 @@ var caseData = [
     "nation": "Japan",
     "Latitude": 36.204824,
     "Longitude": 138.252924,
-    "cases": 19,
+    "cases": 31,
     "death": 0,
     "estimation": false,
     "nationK": "일본"
@@ -2494,8 +2494,8 @@ var caseData = [
     "nation": "China",
     "Latitude": 35.86166,
     "Longitude": 104.195397,
-    "cases": 24324,
-    "death": 490,
+    "cases": 28018,
+    "death": 563,
     "estimation": false,
     "nationK": "중국"
   },
@@ -2524,7 +2524,7 @@ var caseData = [
     "nation": "Singapore",
     "Latitude": 1.352083,
     "Longitude": 103.819836,
-    "cases": 22,
+    "cases": 26,
     "death": 0,
     "estimation": false,
     "nationK": "싱가포르"
@@ -2534,7 +2534,7 @@ var caseData = [
     "nation": "South Korea",
     "Latitude": 35.907757,
     "Longitude": 127.766922,
-    "cases": 18,
+    "cases": 23,
     "death": 0,
     "estimation": false,
     "nationK": "한국"
@@ -2564,7 +2564,7 @@ var caseData = [
     "nation": "Thailand",
     "Latitude": 15.870032,
     "Longitude": 100.992541,
-    "cases": 19,
+    "cases": 25,
     "death": 0,
     "estimation": false,
     "nationK": "태국"
@@ -2614,7 +2614,7 @@ var caseData = [
     "nation": "Philippines",
     "Latitude": 12.879721,
     "Longitude": 121.774017,
-    "cases": 2,
+    "cases": 3,
     "death": 1,
     "estimation": false,
     "nationK": "필리핀"

@@ -26,9 +26,9 @@ $(function() {
 
 				var upDate = updateEx.exec(data)[0].replace("(", "").replace(")", "").replace("일", "");
 				koreaData.confirm = confirmNumEx.exec(data.substring(data.indexOf("확진환자"), data.length))[0].replace("명", "").trim();
-				koreaData.exam = data.indexOf("조사대상") != -1 ? confirmNumEx.exec(data.substring(data.indexOf("조사대상"), data.length))[0].replace("명", "").trim() : "-";
+/*				koreaData.exam = data.indexOf("조사대상") != -1 ? confirmNumEx.exec(data.substring(data.indexOf("조사대상"), data.length))[0].replace("명", "").trim() : "-";
 				koreaData.end = data.indexOf("격리해제") != -1 ? confirmNumEx.exec(data.substring(data.indexOf("격리해제"), data.length))[0].replace("명", "").trim() : "-";
-				koreaData.ing = data.indexOf("검사") != -1 ? confirmNumEx.exec(data.substring(data.indexOf("검사"), data.length))[0].replace("명", "").trim() : "-";
+				koreaData.ing = data.indexOf("검사") != -1 ? confirmNumEx.exec(data.substring(data.indexOf("검사"), data.length))[0].replace("명", "").trim() : "-";*/
 				for (var i = 0; i < caseData.length; i++){
 					if (caseData[i].virus == "corona"){
 						var temp = confirmNumEx.exec(data.substring(data.indexOf(caseData[i].nationK), data.length))[0].split("(");
@@ -288,8 +288,8 @@ $(function() {
 			}
 		}
 	};
-	//$(".table-area").hide();
-	v_table.makeTable();
+	$(".table-area").hide();
+	//v_table.makeTable();
 	// make table (End)
 
 	// Bottom Virus Card (Start)
