@@ -14,16 +14,13 @@ $(function() {
 
 	var updateEx = /\(\d\.\d.*?\)/g,
 		confirmNumEx = /\d(\d|,)*명(\(사망[ ]*\d*\)|)/;
-
 	var upDate = "";
 	var koreaData = {confirm: 0, exam: 0, end: 0, ing: 0};
 
 	$.ajax({
 		url: "dataload.php",
 		success: function(data){
-
 			if (data.indexOf("중국") != -1){
-
 				var upDate = updateEx.exec(data)[0].replace("(", "").replace(")", "").replace("일", "");
 				koreaData.confirm = confirmNumEx.exec(data.substring(data.indexOf("확진환자"), data.length))[0].replace("명", "").trim();
 /*				koreaData.exam = data.indexOf("조사대상") != -1 ? confirmNumEx.exec(data.substring(data.indexOf("조사대상"), data.length))[0].replace("명", "").trim() : "-";
@@ -35,17 +32,12 @@ $(function() {
 						caseData[i].cases = Number(temp[0].replace("명", "").replace(",", "").trim());
 						caseData[i].death = temp.length > 1 && temp[1].indexOf("사망") != -1 ? Number(temp[1].replace("사망", "").replace("명", "").replace(")", "").trim()) : 0;
 					}
-
 				}
-
 				$(".updateDate").html("* 신종코로나는 2020." + upDate);
-
-
+				reloadCoronaStatus();
 			}
-
 		}
 	});
-
 
 	//randomly Spreading Virus
     var $virus= $(".back-virus");
@@ -133,6 +125,12 @@ $(function() {
 		$("span.coronaNowCases").html(coronaNowCases);
 		$("span.coronaNowDeath").html(coronaNowDeath);
 	}
+
+	function reloadCoronaStatus(){
+		coronaNowCases=0;
+		coronaNowDeath=0;
+		getCoronaStatus();
+	};
 	// (end) Get corona cases data
 
 	// (Start) Plots map using leaflet.js

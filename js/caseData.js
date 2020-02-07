@@ -2404,7 +2404,7 @@ var caseData = [
     "nation": "Australia",
     "Latitude": -25.274398,
     "Longitude": 133.775136,
-    "cases": 13,
+    "cases": 14,
     "death": 0,
     "estimation": false,
     "nationK": "호주"
@@ -2454,7 +2454,7 @@ var caseData = [
     "nation": "Germany",
     "Latitude": 51.165691,
     "Longitude": 10.451526,
-    "cases": 10,
+    "cases": 12,
     "death": 0,
     "estimation": false,
     "nationK": "독일"
@@ -2474,7 +2474,7 @@ var caseData = [
     "nation": "Japan",
     "Latitude": 36.204824,
     "Longitude": 138.252924,
-    "cases": 31,
+    "cases": 45,
     "death": 0,
     "estimation": false,
     "nationK": "일본"
@@ -2494,8 +2494,8 @@ var caseData = [
     "nation": "China",
     "Latitude": 35.86166,
     "Longitude": 104.195397,
-    "cases": 28018,
-    "death": 563,
+    "cases": 31161,
+    "death": 636,
     "estimation": false,
     "nationK": "중국"
   },
@@ -2504,7 +2504,7 @@ var caseData = [
     "nation": "Malaysia",
     "Latitude": 4.210484,
     "Longitude": 101.975766,
-    "cases": 10,
+    "cases": 12,
     "death": 0,
     "estimation": false,
     "nationK": "말레이시아"
@@ -2524,7 +2524,7 @@ var caseData = [
     "nation": "Singapore",
     "Latitude": 1.352083,
     "Longitude": 103.819836,
-    "cases": 26,
+    "cases": 28,
     "death": 0,
     "estimation": false,
     "nationK": "싱가포르"
@@ -2534,7 +2534,7 @@ var caseData = [
     "nation": "South Korea",
     "Latitude": 35.907757,
     "Longitude": 127.766922,
-    "cases": 23,
+    "cases": 24,
     "death": 0,
     "estimation": false,
     "nationK": "한국"
@@ -2554,7 +2554,7 @@ var caseData = [
     "nation": "Taiwan",
     "Latitude": 23.69781,
     "Longitude": 120.960515,
-    "cases": 11,
+    "cases": 13,
     "death": 0,
     "estimation": false,
     "nationK": "대만"
@@ -2584,7 +2584,7 @@ var caseData = [
     "nation": "US",
     "Latitude": 37.09024,
     "Longitude": -95.712891,
-    "cases": 11,
+    "cases": 12,
     "death": 0,
     "estimation": false,
     "nationK": "미국"
@@ -2668,5 +2668,15 @@ var caseData = [
     "death": 0,
     "estimation": false,
     "nationK": "이탈리아"
+  },
+  {
+    "virus": "corona",
+    "nation": "Belgium",
+    "Latitude": 50.510982,
+    "Longitude": 4.591108,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "벨기에"
   }
 ];
