@@ -13,7 +13,7 @@ $(function() {
 	};
 
 	var updateEx = /\(\d\.\d.*?\)/g,
-		confirmNumEx = /\d(\d|,)*명(\(사망[ ]*\d*\)|)/;
+		confirmNumEx = /\d(\d|,)*명(\(사망[ ]*\d*([,]|\d)*\)|)/;
 	var upDate = "";
 	var koreaData = {confirm: 0, exam: 0, end: 0, ing: 0};
 
@@ -30,7 +30,7 @@ $(function() {
 					if (caseData[i].virus == "corona"){
 						var temp = confirmNumEx.exec(data.substring(data.indexOf(caseData[i].nationK), data.length))[0].split("(");
 						caseData[i].cases = Number(temp[0].replace("명", "").replace(",", "").trim());
-						caseData[i].death = temp.length > 1 && temp[1].indexOf("사망") != -1 ? Number(temp[1].replace("사망", "").replace("명", "").replace(")", "").trim()) : 0;
+						caseData[i].death = temp.length > 1 && temp[1].indexOf("사망") != -1 ? Number(temp[1].replace("사망", "").replace("명", "").replace(")", "").replace(",", "").trim()) : 0;
 					}
 				}
 				$(".updateDate").html("* 신종코로나는 2020." + upDate);

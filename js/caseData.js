@@ -2404,7 +2404,7 @@ var caseData = [
     "nation": "South Korea",
     "Latitude": 35.907757,
     "Longitude": 127.766922,
-    "cases": 27,
+    "cases": 28,
     "death": 0,
     "estimation": false,
     "nationK": "한국"
@@ -2414,8 +2414,8 @@ var caseData = [
     "nation": "China",
     "Latitude": 35.86166,
     "Longitude": 104.195397,
-    "cases": 37198,
-    "death": 811,
+    "cases": 42638,
+    "death": 1016,
     "estimation": false,
     "nationK": "중국"
   },
@@ -2424,7 +2424,7 @@ var caseData = [
     "nation": "Hong Kong",
     "Latitude": 22.3193039,
     "Longitude": 114.1693611,
-    "cases": 26,
+    "cases": 42,
     "death": 1,
     "estimation": false,
     "nationK": "홍콩"
@@ -2464,7 +2464,7 @@ var caseData = [
     "nation": "Singapore",
     "Latitude": 1.352083,
     "Longitude": 103.819836,
-    "cases": 40,
+    "cases": 43,
     "death": 0,
     "estimation": false,
     "nationK": "싱가포르"
@@ -2484,7 +2484,7 @@ var caseData = [
     "nation": "Vietnam",
     "Latitude": 14.058324,
     "Longitude": 108.277199,
-    "cases": 13,
+    "cases": 14,
     "death": 0,
     "estimation": false,
     "nationK": "베트남"
@@ -2504,7 +2504,7 @@ var caseData = [
     "nation": "Malaysia",
     "Latitude": 4.210484,
     "Longitude": 101.975766,
-    "cases": 16,
+    "cases": 18,
     "death": 0,
     "estimation": false,
     "nationK": "말레이시아"
@@ -2624,7 +2624,7 @@ var caseData = [
     "nation": "United Kingdom",
     "Latitude": 55.378051,
     "Longitude": -3.435973,
-    "cases": 3,
+    "cases": 4,
     "death": 0,
     "estimation": false,
     "nationK": "영국"
@@ -2654,7 +2654,7 @@ var caseData = [
     "nation": "spain",
     "Latitude": 40.463667,
     "Longitude": -3.74922,
-    "cases": 1,
+    "cases": 2,
     "death": 0,
     "estimation": false,
     "nationK": "스페인"
@@ -2684,7 +2684,7 @@ var caseData = [
     "nation": "japan cruise",
     "Latitude": 35.850613,
     "Longitude": 140.464295,
-    "cases": 64,
+    "cases": 135,
     "death": 0,
     "estimation": false,
     "nationK": "일본 크루즈"
