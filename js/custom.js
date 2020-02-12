@@ -33,7 +33,7 @@ $(function() {
 						caseData[i].death = temp.length > 1 && temp[1].indexOf("사망") != -1 ? Number(temp[1].replace("사망", "").replace("명", "").replace(")", "").replace(",", "").trim()) : 0;
 					}
 				}
-				$(".updateDate").html("* 신종코로나는 2020." + upDate);
+				$(".updateDate").html("* 코로나19는 2020." + upDate);
 				reloadCoronaStatus();
 			}
 		}
@@ -293,7 +293,7 @@ $(function() {
 	// Bottom Virus Card (Start)
 	var v_card = {},
 		$card = $(".slider-body ul li"),
-		virusNameKor = { "sars":"사스(SARS)", "flu":"신종플루(H1N1)", "mers":"메르스(MERS)","corona":"신종코로나" };
+		virusNameKor = { "sars":"사스(SARS)", "flu":"신종플루(H1N1)", "mers":"메르스(MERS)","corona":"코로나19" };
 	v_card.makeCardContents = function(virus){
 		var cardData = virusText.filter( function(v,i,a){
 			return a[i].virus == virus;
