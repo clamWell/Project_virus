@@ -2399,12 +2399,12 @@ var caseData = [
     "estimation": false,
     "nationK": "세르비아"
   },
-  {
+   {
     "virus": "corona",
     "nation": "South Korea",
     "Latitude": 35.907757,
     "Longitude": 127.766922,
-    "cases": 28,
+    "cases": 31,
     "death": 0,
     "estimation": false,
     "nationK": "한국"
@@ -2414,8 +2414,8 @@ var caseData = [
     "nation": "China",
     "Latitude": 35.86166,
     "Longitude": 104.195397,
-    "cases": 42638,
-    "death": 1016,
+    "cases": 72436,
+    "death": 1868,
     "estimation": false,
     "nationK": "중국"
   },
@@ -2424,7 +2424,7 @@ var caseData = [
     "nation": "Hong Kong",
     "Latitude": 22.3193039,
     "Longitude": 114.1693611,
-    "cases": 42,
+    "cases": 60,
     "death": 1,
     "estimation": false,
     "nationK": "홍콩"
@@ -2434,8 +2434,8 @@ var caseData = [
     "nation": "Taiwan",
     "Latitude": 23.69781,
     "Longitude": 120.960515,
-    "cases": 18,
-    "death": 0,
+    "cases": 22,
+    "death": 1,
     "estimation": false,
     "nationK": "대만"
   },
@@ -2454,7 +2454,7 @@ var caseData = [
     "nation": "Thailand",
     "Latitude": 15.870032,
     "Longitude": 100.992541,
-    "cases": 32,
+    "cases": 35,
     "death": 0,
     "estimation": false,
     "nationK": "태국"
@@ -2464,7 +2464,7 @@ var caseData = [
     "nation": "Singapore",
     "Latitude": 1.352083,
     "Longitude": 103.819836,
-    "cases": 43,
+    "cases": 77,
     "death": 0,
     "estimation": false,
     "nationK": "싱가포르"
@@ -2474,8 +2474,8 @@ var caseData = [
     "nation": "Japan",
     "Latitude": 36.204824,
     "Longitude": 138.252924,
-    "cases": 26,
-    "death": 0,
+    "cases": 59,
+    "death": 1,
     "estimation": false,
     "nationK": "일본"
   },
@@ -2484,7 +2484,7 @@ var caseData = [
     "nation": "Vietnam",
     "Latitude": 14.058324,
     "Longitude": 108.277199,
-    "cases": 14,
+    "cases": 16,
     "death": 0,
     "estimation": false,
     "nationK": "베트남"
@@ -2504,7 +2504,7 @@ var caseData = [
     "nation": "Malaysia",
     "Latitude": 4.210484,
     "Longitude": 101.975766,
-    "cases": 18,
+    "cases": 22,
     "death": 0,
     "estimation": false,
     "nationK": "말레이시아"
@@ -2534,7 +2534,7 @@ var caseData = [
     "nation": "United Arab Emirates",
     "Latitude": 23.424076,
     "Longitude": 53.847818,
-    "cases": 7,
+    "cases": 9,
     "death": 0,
     "estimation": false,
     "nationK": "아랍에미리트"
@@ -2564,7 +2564,7 @@ var caseData = [
     "nation": "US",
     "Latitude": 37.09024,
     "Longitude": -95.712891,
-    "cases": 12,
+    "cases": 15,
     "death": 0,
     "estimation": false,
     "nationK": "미국"
@@ -2574,7 +2574,7 @@ var caseData = [
     "nation": "Canada",
     "Latitude": 56.130366,
     "Longitude": -106.346771,
-    "cases": 7,
+    "cases": 8,
     "death": 0,
     "estimation": false,
     "nationK": "캐나다"
@@ -2584,8 +2584,8 @@ var caseData = [
     "nation": "France",
     "Latitude": 46.227638,
     "Longitude": 2.213749,
-    "cases": 11,
-    "death": 0,
+    "cases": 12,
+    "death": 1,
     "estimation": false,
     "nationK": "프랑스"
   },
@@ -2594,7 +2594,7 @@ var caseData = [
     "nation": "Germany",
     "Latitude": 51.165691,
     "Longitude": 10.451526,
-    "cases": 14,
+    "cases": 16,
     "death": 0,
     "estimation": false,
     "nationK": "독일"
@@ -2624,7 +2624,7 @@ var caseData = [
     "nation": "United Kingdom",
     "Latitude": 55.378051,
     "Longitude": -3.435973,
-    "cases": 4,
+    "cases": 9,
     "death": 0,
     "estimation": false,
     "nationK": "영국"
@@ -2681,10 +2681,20 @@ var caseData = [
   },
   {
     "virus": "corona",
+    "nation": "Egypt",
+    "Latitude": 26.820553,
+    "Longitude": 30.802498,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "이집트"
+  },
+  {
+    "virus": "corona",
     "nation": "japan cruise",
     "Latitude": 35.850613,
     "Longitude": 140.464295,
-    "cases": 135,
+    "cases": 454,
     "death": 0,
     "estimation": false,
     "nationK": "일본 크루즈"
