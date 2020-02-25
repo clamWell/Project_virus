@@ -15,7 +15,7 @@ $(function() {
 	var updateEx = /\(\d\.\d.*?\)/g,
 		confirmNumEx = /\d(\d|,)*명(\(사망[ ]*\d*([,]|\d)*\)|)/;
 	var upDate = "";
-	var koreaData = {confirm: 0, exam: 0, end: 0, ing: 0};
+	var koreaData = {confirm: 0, exam: 0, end: 0, ing: 0, death:0};
 
 	$.ajax({
 		url: "dataload.php",
@@ -23,14 +23,20 @@ $(function() {
 			if (data.indexOf("중국") != -1){
 				var upDate = updateEx.exec(data)[0].replace("(", "").replace(")", "").replace("일", "");
 				koreaData.confirm = confirmNumEx.exec(data.substring(data.indexOf("확진환자"), data.length))[0].replace("명", "").trim();
+				koreaData.death = data.indexOf("사망자") != -1 ? confirmNumEx.exec(data.substring(data.indexOf("사망자"), data.length))[0].replace("명", "").trim() : "-";
 /*				koreaData.exam = data.indexOf("조사대상") != -1 ? confirmNumEx.exec(data.substring(data.indexOf("조사대상"), data.length))[0].replace("명", "").trim() : "-";
 				koreaData.end = data.indexOf("격리해제") != -1 ? confirmNumEx.exec(data.substring(data.indexOf("격리해제"), data.length))[0].replace("명", "").trim() : "-";
 				koreaData.ing = data.indexOf("검사") != -1 ? confirmNumEx.exec(data.substring(data.indexOf("검사"), data.length))[0].replace("명", "").trim() : "-";*/
 				for (var i = 0; i < caseData.length; i++){
 					if (caseData[i].virus == "corona"){
-						var temp = confirmNumEx.exec(data.substring(data.indexOf(caseData[i].nationK), data.length))[0].split("(");
-						caseData[i].cases = Number(temp[0].replace("명", "").replace(",", "").trim());
-						caseData[i].death = temp.length > 1 && temp[1].indexOf("사망") != -1 ? Number(temp[1].replace("사망", "").replace("명", "").replace(")", "").replace(",", "").trim()) : 0;
+						if(caseData[i].nationK == "한국"){
+							caseData[i].cases = Number(koreaData.confirm);
+							caseData[i].death = Number(koreaData.death);
+						}else{
+							var temp = confirmNumEx.exec(data.substring(data.indexOf(caseData[i].nationK), data.length))[0].split("(");
+							caseData[i].cases = Number(temp[0].replace("명", "").replace(",", "").trim());
+							caseData[i].death = temp.length > 1 && temp[1].indexOf("사망") != -1 ? Number(temp[1].replace("사망", "").replace("명", "").replace(")", "").replace(",", "").trim()) : 0;
+						}
 					}
 				}
 				$(".updateDate").html("* 코로나19는 2020." + upDate);
@@ -116,7 +122,7 @@ $(function() {
 		var c_Data = caseData.filter( function(v,i,a){
 			return a[i].virus == "corona";
 		});
-
+		//console.log(c_Data);
 		for(c=0;c<c_Data.length;c++){
 			coronaNowCases = coronaNowCases + c_Data[c].cases;
 			coronaNowDeath = coronaNowDeath + c_Data[c].death;

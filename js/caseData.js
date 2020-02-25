@@ -2399,7 +2399,7 @@ var caseData = [
     "estimation": false,
     "nationK": "세르비아"
   },
-   {
+  {
     "virus": "corona",
     "nation": "South Korea",
     "Latitude": 35.907757,
@@ -2531,16 +2531,6 @@ var caseData = [
   },
   {
     "virus": "corona",
-    "nation": "United Arab Emirates",
-    "Latitude": 23.424076,
-    "Longitude": 53.847818,
-    "cases": 9,
-    "death": 0,
-    "estimation": false,
-    "nationK": "아랍에미리트"
-  },
-  {
-    "virus": "corona",
     "nation": "india",
     "Latitude": 20.593684,
     "Longitude": 78.96288,
@@ -2558,6 +2548,66 @@ var caseData = [
     "death": 1,
     "estimation": false,
     "nationK": "필리핀"
+  },
+  {
+    "virus": "corona",
+    "nation": "Iran",
+    "Latitude": 32.427908,
+    "Longitude": 53.688046,
+    "cases": 43,
+    "death": 8,
+    "estimation": false,
+    "nationK": "이란"
+  },
+  {
+    "virus": "corona",
+    "nation": "Lebanon",
+    "Latitude": 33.854721,
+    "Longitude": 35.862285,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "레바논"
+  },
+  {
+    "virus": "corona",
+    "nation": "Kuwait",
+    "Latitude": 29.31166,
+    "Longitude": 47.481766,
+    "cases": 3,
+    "death": 0,
+    "estimation": false,
+    "nationK": "쿠웨이트"
+  },
+  {
+    "virus": "corona",
+    "nation": "United Arab Emirates",
+    "Latitude": 23.424076,
+    "Longitude": 53.847818,
+    "cases": 9,
+    "death": 0,
+    "estimation": false,
+    "nationK": "아랍에미리트"
+  },
+  {
+    "virus": "corona",
+    "nation": "Israel",
+    "Latitude": 31.046051,
+    "Longitude": 34.851612,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "이스라엘"
+  },
+  {
+    "virus": "corona",
+    "nation": "Egypt",
+    "Latitude": 26.820553,
+    "Longitude": 30.802498,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "이집트"
   },
   {
     "virus": "corona",
@@ -2614,8 +2664,8 @@ var caseData = [
     "nation": "italy",
     "Latitude": 41.87194,
     "Longitude": 12.56738,
-    "cases": 3,
-    "death": 0,
+    "cases": 156,
+    "death": 2,
     "estimation": false,
     "nationK": "이탈리아"
   },
@@ -2678,16 +2728,6 @@ var caseData = [
     "death": 0,
     "estimation": false,
     "nationK": "호주"
-  },
-  {
-    "virus": "corona",
-    "nation": "Egypt",
-    "Latitude": 26.820553,
-    "Longitude": 30.802498,
-    "cases": 1,
-    "death": 0,
-    "estimation": false,
-    "nationK": "이집트"
   },
   {
     "virus": "corona",
