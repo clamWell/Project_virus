@@ -319,6 +319,7 @@ box-sizing: border-box; padding: 15px; background: rgba(0,0,0,0.7); border-radiu
 .legend-holder ul li .legend-1 {width: 20px; height: 20px;}
 .legend-holder ul li .legend-2 {width: 36px; height: 36px;}
 .legend-holder ul li .legend-3 {width: 52px; height: 52px;}
+.legend-holder ul li .legend-4 {width: 65px; height: 65px;}
 .legend-holder ul li .scope { display: inline-block;font-size: 13px; opacity:0.8;color: #fff; }
 
 .table-area { margin: 50px auto; font-family: 'Noto Sans KR', 'notokr-regular';}
@@ -579,6 +580,7 @@ animation: blur ease-in-out 7s infinite both;}
 .legend-holder ul li .legend-1 {width: 10px; height: 10px;}
 .legend-holder ul li .legend-2 {width: 22px; height: 22px;}
 .legend-holder ul li .legend-3 {width: 32px; height: 32px;}
+.legend-holder ul li .legend-4 {width: 45px; height: 45px;}
 .legend-holder ul li .scope { font-size: 11px; }
 
 .table-area .table-holder { width: 100%; overflow-x: scroll;}

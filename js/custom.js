@@ -176,8 +176,10 @@ $(function() {
 			return 2;
 		}else if(v>100&& v<=1000){
 			return 3.5;
-		}else if(v>1000){
+		}else if(v>1000&&v<=10000){
 			return 5;
+		}else if(v>10000){
+			return 6.5;
 		}
 	},
 	sprCircle.makeCirlces = function(virus, type){
