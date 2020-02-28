@@ -2399,7 +2399,7 @@ var caseData = [
     "estimation": false,
     "nationK": "세르비아"
   },
-   {
+    {
     "virus": "corona",
     "nation": "South Korea",
     "Latitude": 35.907757,
@@ -2651,6 +2651,16 @@ var caseData = [
   },
   {
     "virus": "corona",
+    "nation": "Pakistan",
+    "Latitude": 30.375321,
+    "Longitude": 69.3451159999999,
+    "cases": 2,
+    "death": 0,
+    "estimation": false,
+    "nationK": "파키스탄"
+  },
+  {
+    "virus": "corona",
     "nation": "US",
     "Latitude": 37.09024,
     "Longitude": -95.712891,
@@ -2801,6 +2811,76 @@ var caseData = [
   },
   {
     "virus": "corona",
+    "nation": "Denmark",
+    "Latitude": 56.26392,
+    "Longitude": 9.501785,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "덴마크"
+  },
+  {
+    "virus": "corona",
+    "nation": "Estonia",
+    "Latitude": 58.595272,
+    "Longitude": 25.0136071,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "에스토니아"
+  },
+  {
+    "virus": "corona",
+    "nation": "Georgia",
+    "Latitude": 32.1656221,
+    "Longitude": -82.9000751,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "조지아"
+  },
+  {
+    "virus": "corona",
+    "nation": "Greece",
+    "Latitude": 39.074208,
+    "Longitude": 21.824312,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "그리스"
+  },
+  {
+    "virus": "corona",
+    "nation": "North Macedonia",
+    "Latitude": 41.630072,
+    "Longitude": 21.789095,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "북마케도니아"
+  },
+  {
+    "virus": "corona",
+    "nation": "Norway",
+    "Latitude": 60.4720239999999,
+    "Longitude": 8.46894599999999,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "노르웨이"
+  },
+  {
+    "virus": "corona",
+    "nation": "Romania",
+    "Latitude": 45.943161,
+    "Longitude": 24.96676,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "루마니아"
+  },
+  {
+    "virus": "corona",
     "nation": "Australia",
     "Latitude": -25.274398,
     "Longitude": 133.775136,
@@ -2815,7 +2895,7 @@ var caseData = [
     "Latitude": 28.033886,
     "Longitude": 1.659626,
     "cases": 1,
-    "death": 0,
+    "death": null,
     "estimation": false,
     "nationK": "알제리"
   },
@@ -2829,4 +2909,4 @@ var caseData = [
     "estimation": false,
     "nationK": "일본 크루즈"
   }
-]
+];
