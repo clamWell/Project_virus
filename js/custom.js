@@ -205,14 +205,23 @@ $(function() {
 				var circles = new L.circle([data[i].Latitude, data[i].Longitude],{
 					color: circleColor,
 					fillColor: circleColor,
-					fillOpacity: 0.2,
+					fillOpacity: 0.1,
+					dashArray: 2,
 					border: 1,
 					className: 'circle circle-'+data[i].nation,
 					idName:i,
 					weight:1,
 					radius: radius
 				}).bindPopup(popUpMsg);
+				circles.on({
+					mouseover: highlightFeature,
+					mouseout: resetHighlight,
+				});
+
+				var pulsingIcon = L.icon.pulse({iconSize:[10,10],color:circleColor,fillColor:circleColor});
+				var marker = L.marker([data[i].Latitude, data[i].Longitude],{icon: pulsingIcon}).bindPopup(popUpMsg);
 				this.circlePos.addLayer(circles);
+				this.circlePos.addLayer(marker);
 
 			}
 
@@ -230,6 +239,7 @@ $(function() {
 	},
 	sprCircle.removeMapCircles = function(){
 		$(".circle").fadeOut();
+		$(".leaflet-pulsing-icon").fadeOut();
 	};
 
 	sprCircle.setMapDefault = function(){
@@ -240,6 +250,21 @@ $(function() {
 		sprCircle.makeCirlces(mapVirus, mapDataType);
 	}
 	sprCircle.setMapDefault();
+
+	function highlightFeature(e) {
+		var cr = e.target;
+		cr.setStyle({
+			dashArray: "0",
+			fillOpacity: 0.25
+		});
+	}
+	function resetHighlight(e) {
+		var cr = e.target;
+		cr.setStyle({ 
+			dashArray: "2",
+			fillOpacity: 0.1
+		}); 
+	}
 
 	function circlesOn(e) {
 		var layer = e.target;

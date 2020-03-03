@@ -2399,7 +2399,7 @@ var caseData = [
     "estimation": false,
     "nationK": "세르비아"
   },
-    {
+   {
     "virus": "corona",
     "nation": "South Korea",
     "Latitude": 35.907757,
@@ -2501,36 +2501,6 @@ var caseData = [
   },
   {
     "virus": "corona",
-    "nation": "Malaysia",
-    "Latitude": 4.210484,
-    "Longitude": 101.975766,
-    "cases": 22,
-    "death": 0,
-    "estimation": false,
-    "nationK": "말레이시아"
-  },
-  {
-    "virus": "corona",
-    "nation": "Cambodia",
-    "Latitude": 12.565679,
-    "Longitude": 104.990963,
-    "cases": 1,
-    "death": 0,
-    "estimation": false,
-    "nationK": "캄보디아"
-  },
-  {
-    "virus": "corona",
-    "nation": "Sri Lanka",
-    "Latitude": 7.87305399999999,
-    "Longitude": 80.7717969999999,
-    "cases": 1,
-    "death": 0,
-    "estimation": false,
-    "nationK": "스리랑카"
-  },
-  {
-    "virus": "corona",
     "nation": "india",
     "Latitude": 20.593684,
     "Longitude": 78.96288,
@@ -2551,6 +2521,76 @@ var caseData = [
   },
   {
     "virus": "corona",
+    "nation": "Malaysia",
+    "Latitude": 4.210484,
+    "Longitude": 101.975766,
+    "cases": 22,
+    "death": 0,
+    "estimation": false,
+    "nationK": "말레이시아"
+  },
+  {
+    "virus": "corona",
+    "nation": "Cambodia",
+    "Latitude": 12.565679,
+    "Longitude": 104.990963,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "캄보디아"
+  },
+  {
+    "virus": "corona",
+    "nation": "Russia",
+    "Latitude": 61.52401,
+    "Longitude": 105.318756,
+    "cases": 2,
+    "death": 0,
+    "estimation": false,
+    "nationK": "러시아"
+  },
+  {
+    "virus": "corona",
+    "nation": "Sri Lanka",
+    "Latitude": 7.87305399999999,
+    "Longitude": 80.7717969999999,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "스리랑카"
+  },
+  {
+    "virus": "corona",
+    "nation": "Afghanistan",
+    "Latitude": 33.93911,
+    "Longitude": 67.709953,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "아프가니스탄"
+  },
+  {
+    "virus": "corona",
+    "nation": "Pakistan",
+    "Latitude": 30.375321,
+    "Longitude": 69.3451159999999,
+    "cases": 2,
+    "death": 0,
+    "estimation": false,
+    "nationK": "파키스탄"
+  },
+  {
+    "virus": "corona",
+    "nation": "Indonesia",
+    "Latitude": -0.789275,
+    "Longitude": 113.921327,
+    "cases": 2,
+    "death": 0,
+    "estimation": false,
+    "nationK": "인도네시아"
+  },
+  {
+    "virus": "corona",
     "nation": "Iran",
     "Latitude": 32.427908,
     "Longitude": 53.688046,
@@ -2558,16 +2598,6 @@ var caseData = [
     "death": 8,
     "estimation": false,
     "nationK": "이란"
-  },
-  {
-    "virus": "corona",
-    "nation": "Lebanon",
-    "Latitude": 33.854721,
-    "Longitude": 35.862285,
-    "cases": 2,
-    "death": 0,
-    "estimation": false,
-    "nationK": "레바논"
   },
   {
     "virus": "corona",
@@ -2581,6 +2611,16 @@ var caseData = [
   },
   {
     "virus": "corona",
+    "nation": "Bahrain",
+    "Latitude": 26.0667,
+    "Longitude": 50.5577,
+    "cases": 26,
+    "death": 0,
+    "estimation": false,
+    "nationK": "바레인"
+  },
+  {
+    "virus": "corona",
     "nation": "United Arab Emirates",
     "Latitude": 23.424076,
     "Longitude": 53.847818,
@@ -2588,6 +2628,36 @@ var caseData = [
     "death": 0,
     "estimation": false,
     "nationK": "아랍에미리트"
+  },
+  {
+    "virus": "corona",
+    "nation": "Iraq",
+    "Latitude": 33.223191,
+    "Longitude": 43.679291,
+    "cases": 5,
+    "death": 0,
+    "estimation": false,
+    "nationK": "이라크"
+  },
+  {
+    "virus": "corona",
+    "nation": "Oman",
+    "Latitude": 21.4735329,
+    "Longitude": 55.975413,
+    "cases": 4,
+    "death": 0,
+    "estimation": false,
+    "nationK": "오만"
+  },
+  {
+    "virus": "corona",
+    "nation": "Lebanon",
+    "Latitude": 33.854721,
+    "Longitude": 35.862285,
+    "cases": 2,
+    "death": 0,
+    "estimation": false,
+    "nationK": "레바논"
   },
   {
     "virus": "corona",
@@ -2611,53 +2681,23 @@ var caseData = [
   },
   {
     "virus": "corona",
-    "nation": "Afghanistan",
-    "Latitude": 33.93911,
-    "Longitude": 67.709953,
+    "nation": "Algeria",
+    "Latitude": 28.033886,
+    "Longitude": 1.659626,
     "cases": 1,
-    "death": 0,
+    "death": null,
     "estimation": false,
-    "nationK": "아프가니스탄"
+    "nationK": "알제리"
   },
   {
     "virus": "corona",
-    "nation": "Bahrain",
-    "Latitude": 26.0667,
-    "Longitude": 50.5577,
-    "cases": 26,
+    "nation": "Qatar",
+    "Latitude": 25.354826,
+    "Longitude": 51.183884,
+    "cases": 3,
     "death": 0,
     "estimation": false,
-    "nationK": "바레인"
-  },
-  {
-    "virus": "corona",
-    "nation": "Oman",
-    "Latitude": 21.4735329,
-    "Longitude": 55.975413,
-    "cases": 4,
-    "death": 0,
-    "estimation": false,
-    "nationK": "오만"
-  },
-  {
-    "virus": "corona",
-    "nation": "Iraq",
-    "Latitude": 33.223191,
-    "Longitude": 43.679291,
-    "cases": 5,
-    "death": 0,
-    "estimation": false,
-    "nationK": "이라크"
-  },
-  {
-    "virus": "corona",
-    "nation": "Pakistan",
-    "Latitude": 30.375321,
-    "Longitude": 69.3451159999999,
-    "cases": 2,
-    "death": 0,
-    "estimation": false,
-    "nationK": "파키스탄"
+    "nationK": "카타르"
   },
   {
     "virus": "corona",
@@ -2691,33 +2731,33 @@ var caseData = [
   },
   {
     "virus": "corona",
-    "nation": "France",
-    "Latitude": 46.227638,
-    "Longitude": 2.213749,
-    "cases": 14,
-    "death": 1,
-    "estimation": false,
-    "nationK": "프랑스"
-  },
-  {
-    "virus": "corona",
-    "nation": "Germany",
-    "Latitude": 51.165691,
-    "Longitude": 10.451526,
-    "cases": 18,
+    "nation": "Mexico",
+    "Latitude": 23.634501,
+    "Longitude": -102.552784,
+    "cases": 2,
     "death": 0,
     "estimation": false,
-    "nationK": "독일"
+    "nationK": "멕시코"
   },
   {
     "virus": "corona",
-    "nation": "Finland",
-    "Latitude": 61.9241099999999,
-    "Longitude": 25.7481511,
+    "nation": "Ecuador",
+    "Latitude": -1.831239,
+    "Longitude": -78.1834059999999,
     "cases": 1,
     "death": 0,
     "estimation": false,
-    "nationK": "핀란드"
+    "nationK": "에콰도르"
+  },
+  {
+    "virus": "corona",
+    "nation": "Dominican Republic",
+    "Latitude": 18.735693,
+    "Longitude": -70.162651,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "도미니카공화국"
   },
   {
     "virus": "corona",
@@ -2731,6 +2771,26 @@ var caseData = [
   },
   {
     "virus": "corona",
+    "nation": "Germany",
+    "Latitude": 51.165691,
+    "Longitude": 10.451526,
+    "cases": 18,
+    "death": 0,
+    "estimation": false,
+    "nationK": "독일"
+  },
+  {
+    "virus": "corona",
+    "nation": "France",
+    "Latitude": 46.227638,
+    "Longitude": 2.213749,
+    "cases": 14,
+    "death": 1,
+    "estimation": false,
+    "nationK": "프랑스"
+  },
+  {
+    "virus": "corona",
     "nation": "United Kingdom",
     "Latitude": 55.378051,
     "Longitude": -3.435973,
@@ -2741,26 +2801,6 @@ var caseData = [
   },
   {
     "virus": "corona",
-    "nation": "Russia",
-    "Latitude": 61.52401,
-    "Longitude": 105.318756,
-    "cases": 2,
-    "death": 0,
-    "estimation": false,
-    "nationK": "러시아"
-  },
-  {
-    "virus": "corona",
-    "nation": "sweden",
-    "Latitude": 60.128161,
-    "Longitude": 18.643501,
-    "cases": 1,
-    "death": 0,
-    "estimation": false,
-    "nationK": "스웨덴"
-  },
-  {
-    "virus": "corona",
     "nation": "spain",
     "Latitude": 40.463667,
     "Longitude": -3.74922,
@@ -2768,16 +2808,6 @@ var caseData = [
     "death": 0,
     "estimation": false,
     "nationK": "스페인"
-  },
-  {
-    "virus": "corona",
-    "nation": "Switzerland",
-    "Latitude": 46.818188,
-    "Longitude": 8.22751199999999,
-    "cases": 1,
-    "death": 0,
-    "estimation": false,
-    "nationK": "스위스"
   },
   {
     "virus": "corona",
@@ -2801,6 +2831,26 @@ var caseData = [
   },
   {
     "virus": "corona",
+    "nation": "Finland",
+    "Latitude": 61.9241099999999,
+    "Longitude": 25.7481511,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "핀란드"
+  },
+  {
+    "virus": "corona",
+    "nation": "sweden",
+    "Latitude": 60.128161,
+    "Longitude": 18.643501,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "스웨덴"
+  },
+  {
+    "virus": "corona",
     "nation": "Belgium",
     "Latitude": 50.510982,
     "Longitude": 4.591108,
@@ -2808,6 +2858,16 @@ var caseData = [
     "death": 0,
     "estimation": false,
     "nationK": "벨기에"
+  },
+  {
+    "virus": "corona",
+    "nation": "Switzerland",
+    "Latitude": 46.818188,
+    "Longitude": 8.22751199999999,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "스위스"
   },
   {
     "virus": "corona",
@@ -2881,23 +2941,173 @@ var caseData = [
   },
   {
     "virus": "corona",
+    "nation": "Netherlands",
+    "Latitude": 52.132633,
+    "Longitude": 5.29126599999999,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "네덜란드"
+  },
+  {
+    "virus": "corona",
+    "nation": "Belarus",
+    "Latitude": 53.709807,
+    "Longitude": 27.953389,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "벨라루스"
+  },
+  {
+    "virus": "corona",
+    "nation": "Lithuania",
+    "Latitude": 55.169438,
+    "Longitude": 23.881275,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "리투아니아"
+  },
+  {
+    "virus": "corona",
+    "nation": "San Marino",
+    "Latitude": 43.94236,
+    "Longitude": 12.457777,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "산마리노"
+  },
+  {
+    "virus": "corona",
+    "nation": "Azerbaijan",
+    "Latitude": 40.143105,
+    "Longitude": 47.576927,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "아제르바이잔"
+  },
+  {
+    "virus": "corona",
+    "nation": "Iceland",
+    "Latitude": 64.963051,
+    "Longitude": -19.020835,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "아이슬란드"
+  },
+  {
+    "virus": "corona",
+    "nation": "Monaco",
+    "Latitude": 43.7384176,
+    "Longitude": 7.42461579999999,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "모나코"
+  },
+  {
+    "virus": "corona",
+    "nation": "Luxembourg",
+    "Latitude": 49.815273,
+    "Longitude": 6.12958299999999,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "룩셈부르크"
+  },
+  {
+    "virus": "corona",
+    "nation": "Armenia",
+    "Latitude": 40.069099,
+    "Longitude": 45.038189,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "아르메니아"
+  },
+  {
+    "virus": "corona",
+    "nation": "Czech Republic",
+    "Latitude": 49.8174919999999,
+    "Longitude": 15.472962,
+    "cases": 3,
+    "death": 0,
+    "estimation": false,
+    "nationK": "체코"
+  },
+  {
+    "virus": "corona",
+    "nation": "Portugal",
+    "Latitude": 39.3998719999999,
+    "Longitude": -8.224454,
+    "cases": 2,
+    "death": 0,
+    "estimation": false,
+    "nationK": "포르투갈"
+  },
+  {
+    "virus": "corona",
+    "nation": "Latvia",
+    "Latitude": 56.879635,
+    "Longitude": 24.603189,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "라트비아"
+  },
+  {
+    "virus": "corona",
+    "nation": "Andorra",
+    "Latitude": 42.506285,
+    "Longitude": 1.521801,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "안도라"
+  },
+  {
+    "virus": "corona",
+    "nation": "Ireland",
+    "Latitude": 53.41291,
+    "Longitude": -8.24389,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "아일랜드"
+  },
+  {
+    "virus": "corona",
     "nation": "Australia",
     "Latitude": -25.274398,
     "Longitude": 133.775136,
-    "cases": 23,
+    "cases": 26,
     "death": 0,
     "estimation": false,
     "nationK": "호주"
   },
   {
     "virus": "corona",
-    "nation": "Algeria",
-    "Latitude": 28.033886,
-    "Longitude": 1.659626,
+    "nation": "New Zealand",
+    "Latitude": -40.900557,
+    "Longitude": 174.885971,
     "cases": 1,
-    "death": null,
+    "death": 0,
     "estimation": false,
-    "nationK": "알제리"
+    "nationK": "뉴질랜드"
+  },
+  {
+    "virus": "corona",
+    "nation": "Nigeria",
+    "Latitude": 9.081999,
+    "Longitude": 8.675277,
+    "cases": 1,
+    "death": 0,
+    "estimation": false,
+    "nationK": "나이지리아"
   },
   {
     "virus": "corona",
