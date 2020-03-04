@@ -1,8 +1,10 @@
 <?php
 	include_once('/data/news/kh_storytelling/_common_header.php');
+	date_default_timezone_set('Asia/Seoul');
 	$css = "css/style.css?" . filemtime("css/style.css");
 	$js = "js/custom.js?" . filemtime("js/custom.js");
 	$caseData = "js/caseData.js?" . filemtime("js/caseData.js");
+	$updateDate = date("Y.m.d", filemtime("js/caseData.js"));
 	$virusText = "js/virusText.js?" . filemtime("js/virusText.js");
 	$domesticCases = "js/domesticCases.js?" . filemtime("js/domesticCases.js");
 ?>
@@ -235,7 +237,8 @@
 									<li data-virus="corona">코로나19</li>
 								</ul>
 							</div>
-							<p class="updateDate">2020.03.04 09시 기준(출처:질병관리본부)</p>
+							<p class="updateDate">코로나19는 <?php echo $updateDate; ?> 기준(출처:질병관리본부)</p>
+
 							<div class="map-plots-graph">
 								<div class="map-holder">
 									<div id="map"></div>
@@ -304,7 +307,7 @@
 										</tr>
 									 </thead>
 									<tbody>
-										
+
 									</tbody>
 								</table>
 							</div>
@@ -508,7 +511,7 @@
 
 							<div class="btn go-timeline">
 								<a href="http://news.khan.co.kr/kh_issuenseries/theme_timeline.html?t_code=A103" target="_blank" >
-									<p>코로나19 뉴스 타임라인 바로가기</p>							
+									<p>코로나19 뉴스 타임라인 바로가기</p>
 								</a>
 							</div>
 							<!--
