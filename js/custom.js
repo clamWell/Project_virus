@@ -12,6 +12,9 @@ $(function() {
 		return Math.floor((Math.random() * (n2 - n1 + 1)) + n1);
 	};
 
+	$(".updateDate").html("코로나19 최종 업데이트 : " + caseData[0].korea + "(한국) " + caseData[0].world + "(세계)")
+	caseData.shift();
+
 	//randomly Spreading Virus
     var $virus= $(".back-virus");
 	for (var i = 0; i < $virus.length; i++) {
