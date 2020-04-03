@@ -214,7 +214,7 @@ $(function() {
 
 	sprCircle.setMapDefault = function(){
 		getCoronaStatus();
-		mapVirus = "sars";
+		mapVirus = "corona";
 		mapDataType ="cases";
 		$(".legend-holder").addClass("legend-cases");
 		sprCircle.makeCirlces(mapVirus, mapDataType);
@@ -304,6 +304,14 @@ $(function() {
 		$(".card-con-header .virus-name").html( virusNameKor[virus]);
 		var cardImgUrl = (isMobile==true)? ("url("+imgURL+"card-con-virus-"+virus+"-m.jpg) no-repeat"): ("url("+imgURL+"card-con-virus-"+virus+".jpg) no-repeat");
 		$(".card-con-col-2 .card-con-photo").css({"background": cardImgUrl });
+		if(isMobile==false){
+			if(virus=="corona"){
+				$(".card-con-col-2 .card-con-photo").css({"height": "500px"});
+			}else{
+				$(".card-con-col-2 .card-con-photo").css({"height": "800px"});
+			} 
+		}
+
 		$(".storytelling-as-numbers > ul").html("");
 		$(".text-section > ul").html("");
 		var tN = 0;
@@ -321,10 +329,14 @@ $(function() {
 		}
 
 	},
-	v_card.showCardContents = function(){
+	v_card.showCardContents = function(t){
 		$(".slider-bottom").slideDown( function(){
-			var cardConPos = $(".card-con-header").offset().top-150;
-			$("html, body").animate({scrollTop: cardConPos},800, "easeOutCubic");
+			if(t==true){
+			}else{
+				var cardConPos = $(".card-con-header").offset().top-150;
+				$("html, body").animate({scrollTop: cardConPos},800, "easeOutCubic");
+			}
+			
 		});
 	}
 	v_card.hideCardContents = function(){
@@ -344,6 +356,10 @@ $(function() {
 	$(".see-more-btn, .close-btn").on("click", function(e){
 		v_card.hideCardContents();
 	});
+
+	// corona 고정 노출
+	v_card.makeCardContents("corona");
+	v_card.showCardContents(true);
 	// Bottom Virus Card (End)
 
 

@@ -345,7 +345,7 @@ tbody th, td { border-bottom: 1px solid rgba(255,255,255,0.2); color:#fff; font-
 .personCard .card-des { max-width: 500px;margin: 0 auto; /* background: rgba(255,255,255,0.1);border-radius: 8px; */}
 .personCard .card-des p { text-align: center; color:#fff; font-weight: bold;  font-family: 'Noto Sans KR', 'notokr-regular'; 
 font-size: 18px; position: relative; top: -8px; opacity: 0.7;font-weight:200; }
-.personCard .slider-area { width:100%;  margin: 0 auto; position: relative;  padding-top: 30px;}
+.personCard .slider-area { width:100%;  margin: 0 auto; position: relative; }
 .list-type { position: absolute; right: 0; top:0; width: 200px; margin-top: 10px; display: none; }
 .list-type::after { clear: both; content:""; display:block; }
 .list-type ul {  position: relative; color:#fff; font-size: 15px; }
@@ -619,7 +619,7 @@ background: rgba(0,0,0,0.5); border-radius: 0px 10px 10px 0px;margin-top: -30px;
 .storytelling-as-numbers h4 { font-size: 20px; margin-bottom: 10px; text-align: center; color: #414758;}
 .card-con-col-2 .card-con-list ul li { font-size: 18px; margin: 25px 0; }
 .text-section { box-sizing: border-box; padding: 0px 10px; width: 100%; }
-.text-section h4 { font-size: 20px; margin-bottom: 10px;}
+.text-section h4 { font-size: 20px; margin-bottom: 10px;text-align: center; color: #414758;}
 .text-section ul li { font-size: 18px; margin: 25px 0; }
 .each-card-contents-wrap { padding-bottom: 30px; }
 .see-more-btn-holder { margin: 50px auto;box-sizing: border-box;  width: 100%; padding: 0px 20px;}

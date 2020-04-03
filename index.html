@@ -224,17 +224,17 @@
 						</div>
 						<div class="pro-des">
 							<p>2019년 12월 말 중국 후베이성 우한에서 신종 폐렴 환자가 확인됐다. 세계를 불안하게 만든 신종 코로나바이러스 감염증(코로나19) 사태의 시작이었다. 당국이 인구 1100만명의 우한시를 봉쇄하고 인민해방군까지 대대적으로 방역에 투입했지만 확산세는 그칠 줄을 모른다.</p>
-							<p>지금까지 사망자는 <span class="coronaNowDeath">1018</span>명으로, 349명이 사망한 사스를 넘어섰다. 감염자 수는 <span class="coronaNowCases">43065</span>명에 이르렀다. 각국이 전세기로 자국민들을 실어나르고 우한 방문자들의 출입국 통제를 시작했으나 역부족이다.</p>
+							<p>세계의 감염자 수는 3일(한국시간) 100만명을 넘어섰고 사망자도 5만명을 훌쩍 넘었다. 우한에서 감염 발생이 공식 확인된 지 석달 만에 이 전염병은 세계로 퍼져 지구 전체를 공포와 봉쇄로 몰아넣었다. </p>
 						</div>
 
 
 						<div class="world-map-area">
 							<div class="virus-type-change">
 								<ul>
-									<li class="on" data-virus="sars">사스</li>
+									<li data-virus="sars">사스</li>
 									<li data-virus="flu">신종플루</li>
 									<li data-virus="mers">메르스</li>
-									<li data-virus="corona">코로나19</li>
+									<li class="on" data-virus="corona">코로나19</li>
 								</ul>
 							</div>
 							<p class="updateDate">코로나19는 <?php echo $updateDate; ?> 기준(출처:질병관리본부)</p>
@@ -326,69 +326,6 @@
 							<p>21세기 세계를 흉흉하게 만든 주요 호흡기 전염병들과 코로나19의 확산·대응과정을 비교해본다.</p>
 						</div>
 
-						<div class="personCard" >
-							<div class="card-des">
-								<p>각각의 전염병 카드를 <b>클릭</b>하시면 하단에 관련 정보가 나타납니다. </p>
-							</div>
-
-							<div class="slider-area">
-								<div class="slider">
-									<div class="slider-wrapper">
-											<div class="arrow prev" id="prev"><img src="http://img.khan.co.kr/spko/storytelling/2019/ordinary/arrow-prev.png" alt="이전"></div>
-											<div class="arrow next" id="next"><img src="http://img.khan.co.kr/spko/storytelling/2019/ordinary/arrow-next.png" alt="다음"></div>
-											<div class="slider-body">
-											<ul>
-												<li class="each-card card--1" data-card-virus="sars">
-													<div class="card-wrap">
-														<div class="back-photo"></div>
-														<div class="person-info">
-															<img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-1-name.png" alt="사스">
-															<div class="info-txt">
-																2002년 발생
-															</div>
-														</div>
-													</div>
-												</li>
-												<li class="each-card card--2" data-card-virus="flu">
-													<div class="card-wrap">
-														<div class="back-photo"></div>
-														<div class="person-info">
-															<img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-2-name.png" alt="신종플루">
-															<div class="info-txt">
-																2009년 발생
-															</div>
-														</div>
-													</div>
-												</li>
-												<li class="each-card card--3" data-card-virus="mers">
-													<div class="card-wrap">
-														<div class="back-photo"></div>
-														<div class="person-info">
-															<img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-3-name.png" alt="">
-															<div class="info-txt">
-																2012년 발생
-															</div>
-														</div>
-													</div>
-												</li>
-												<li class="each-card card--4" data-card-virus="corona">
-													<div class="card-wrap">
-														<div class="back-photo"></div>
-														<div class="person-info">
-															<img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-4-name-ver2.png" alt="신종플루">
-															<div class="info-txt">
-																2019년 발생
-															</div>
-														</div>
-													</div>
-												</li>
-
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
 
 						<div class="slider-bottom">
 							<div class="each-card-contents">
@@ -446,10 +383,76 @@
 									<div class="close-btn">설명 닫기</div>
 								</div>
 							</div>
+							<!--
 							<div class="see-more-btn-holder">
 								<div class="see-more-btn">다른 전염병에 대해 알아보시겠어요?</div>
+							</div>-->
+
+						</div>
+
+						<div class="personCard" >
+							<div class="card-des">
+								<p>다른 전염병에 대해 알아보시겠어요?</p>
+								<p>각각의 전염병 카드를 <b>클릭</b>하시면 관련 정보가 나타납니다. </p>
 							</div>
 
+							<div class="slider-area">
+								<div class="slider">
+									<div class="slider-wrapper">
+											<div class="arrow prev" id="prev"><img src="http://img.khan.co.kr/spko/storytelling/2019/ordinary/arrow-prev.png" alt="이전"></div>
+											<div class="arrow next" id="next"><img src="http://img.khan.co.kr/spko/storytelling/2019/ordinary/arrow-next.png" alt="다음"></div>
+											<div class="slider-body">
+											<ul>
+												<li class="each-card card--1" data-card-virus="sars">
+													<div class="card-wrap">
+														<div class="back-photo"></div>
+														<div class="person-info">
+															<img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-1-name.png" alt="사스">
+															<div class="info-txt">
+																2002년 발생
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="each-card card--2" data-card-virus="flu">
+													<div class="card-wrap">
+														<div class="back-photo"></div>
+														<div class="person-info">
+															<img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-2-name.png" alt="신종플루">
+															<div class="info-txt">
+																2009년 발생
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="each-card card--3" data-card-virus="mers">
+													<div class="card-wrap">
+														<div class="back-photo"></div>
+														<div class="person-info">
+															<img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-3-name.png" alt="">
+															<div class="info-txt">
+																2012년 발생
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="each-card card--4 on" data-card-virus="corona">
+													<div class="card-wrap">
+														<div class="back-photo"></div>
+														<div class="person-info">
+															<img src="http://img.khan.co.kr/spko/storytelling/2020/virus/virus-4-name-ver2.png" alt="신종플루">
+															<div class="info-txt">
+																2019년 발생
+															</div>
+														</div>
+													</div>
+												</li>
+
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 
 						<div class="section-article">
