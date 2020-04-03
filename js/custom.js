@@ -309,7 +309,11 @@ $(function() {
 		var tN = 0;
 		for(c=0; c<cardData.length;c++){
 			if(cardData[c].listType == "number"){
-				$(".storytelling-as-numbers > ul").append("<li><p class='title'>"+cardData[c].title+"</p><p class='conts'>"+cardData[c].conts+"</p></li>");
+					$(".storytelling-as-numbers > ul").append("<li><p class='title'>"+cardData[c].title+"</p><p class='conts'>"+cardData[c].conts+"</p></li>");
+				if(virus=="corona"){
+					$(".storytelling-as-numbers > ul li").eq(1).hide();
+					$(".storytelling-as-numbers > ul li").eq(2).hide();
+				}
 			}else if(cardData[c].listType == "text"){
 				$(".text-section > ul").append("<li><p class='title'>"+cardData[c].title+"</p><div class='para-holder'>"+cardData[c].conts+"</div><div class='card-photo'><img src='"+imgURL+"card-con-photo-"+virus+"-"+tN+".jpg' alt=''></div></li>");
 				tN++;
